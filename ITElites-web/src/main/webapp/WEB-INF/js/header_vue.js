@@ -52,6 +52,14 @@ new Vue({
       var Num = index + 1;
       return "navList" + Num;
     },
+    get:function(){
+      //发送get请求
+      this.$http.get('/gethead.do').then(function(res){
+          document.write(res.body);       //成功
+      },function(){
+          console.log('请求失败处理');     //失败
+      });
+    }
   }
 });
 //搜索框
