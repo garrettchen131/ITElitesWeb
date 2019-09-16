@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "小豆岛默陌写意水墨简";
+  src: url("小豆岛默陌写意水墨简.woff2") format("woff2"),
+       url("小豆岛默陌写意水墨简.woff") format("woff"),
+       url("小豆岛默陌写意水墨简.ttf") format("truetype"),
+       url("小豆岛默陌写意水墨简.eot") format("embedded-opentype"),
+       url("小豆岛默陌写意水墨简.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

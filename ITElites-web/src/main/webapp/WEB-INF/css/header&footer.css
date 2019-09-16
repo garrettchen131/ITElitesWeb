@@ -1,0 +1,177 @@
+* {
+    margin:0;
+    padding:0;
+}
+/* 顶部 */
+#header {
+    width:100%;
+    height:60px;
+    background-color: #e8ece9;
+	position: fixed;
+    z-index: 9999;
+    box-shadow: 0 1px 5px #565766;
+}
+#header>strong{
+    font-size: 210%;
+    font-family: 'Times New Roman', Times, serif;
+    color: #565766;
+    margin-left: 8%;
+    line-height: 180%;
+    padding-right: 2%;
+    float: left;
+    user-select: none;
+}
+#header #nav {
+    width: 60%;
+    float: left;
+    margin:0 0 0 0;
+    flex-wrap: wrap;  /* 不会超出容器 */
+}
+#header .navList {
+    float: left;
+    list-style: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    line-height: 300%;
+    margin-top: 0.8%;
+    font-size: 110%;
+    color: #565766;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    user-select: none;
+}
+#header .navList>a {
+    text-decoration: none;
+    color: #565766;
+    display: block;
+}
+#header .navList>a:hover {
+    color: #7aa6a5;
+}
+#header .navList>a:active {
+    color: #7aa6a5;
+}
+.active {
+    /* 这里之前的选择器优先级比这个高，先用！important占时处理一下 */
+    color: #7aa6a5 !important;
+}
+#schoolIcon{
+    width:10%;
+}
+
+/* 搜索框 */
+#search{
+    width:0%;
+    height:50%;
+    border-radius: 20px;
+    float:right;
+    position: absolute;
+    right:10%;
+    top:25%;
+}
+#searchblock{
+    width:15%;
+    height:50%;
+    position: absolute;
+    left: 75%;
+    top:25%;
+    z-index:999;
+}
+#searchblock input{
+    width:80%;
+    height:50%;
+    position: absolute;
+    left: 4%;
+    font-size: 70%;
+    top:25%;
+    border:0;
+    color: #636366;
+    padding-left: 2%;
+    padding-right: 3%;
+    background-color: #e8ece9;
+    outline: none;
+    display: none;
+}
+#searchblock>img{
+    width:12%;
+    position: absolute;
+    top:5%;
+    left: 85%;
+    cursor: pointer;
+    display: none;
+}
+#searchIcon{
+    width:2%;
+    position: absolute;
+    left: 87.65%;
+    top: 27%;
+}
+/* 顶部三角背景遮罩层 */
+.trangleShadowLeft{
+    position: absolute;
+    width: 100%;
+    height:65%;
+    background-color: rgba(255,255,255,1);
+    top:74%;
+    transform:rotate(15deg);
+    left: -15%;
+    z-index:3;
+}
+.trangleShadowright{
+    position: absolute;
+    width: 40%;
+    height:50%;
+    background-color: rgba(255,255,255,1);
+    top:85%;
+    transform:rotate(-15deg);
+    left: 70%;
+    z-index:3;
+
+}
+
+/* 底部 */
+#footer{
+    background-color: #737373;
+    width:100%;
+    height:300px;
+}
+#footerShadowLeft{
+    position: relative;
+    width: 50%;
+    height:67%;
+    background-color: rgba(255,255,255,1);
+    top:-30%;
+    transform:rotate(-20deg);
+    left: -15%;
+}
+#footerShadowright{
+    position: relative;
+    width: 90%;
+    height:60%;
+    background-color: rgba(255,255,255,1);
+    top:-100%;
+    transform:rotate(8deg);
+    left: 20%;
+
+}
+#footer>p{
+    color:#e8ece9;
+    position: relative;
+    top:-90%;
+    left: 20%;
+}
+#footerCopyright{
+    width:100%;
+    background-color: #d3d2d2;
+    color: black;
+    font-size: 80%;
+    text-align: center;
+    margin:0;
+}
+#footer a{
+    text-decoration: underline;
+    color:#e8ece9;
+}
+#footer a:hover {
+    color: rgb(241, 241, 43);
+}

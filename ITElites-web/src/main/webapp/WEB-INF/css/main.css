@@ -1,0 +1,219 @@
+/* 主页 */
+#LunBo {
+    position: relative;
+    width:100%;
+    overflow: hidden;
+	transition: all 2s;
+}
+#carousel{
+    position: relative;
+    width:100%;
+    z-index: 0;
+}
+#shadow{
+    position: absolute;
+    width:100%;
+    background-color: rgba(98,182,186,0.6);
+    z-index: 1;
+}
+#shadow .title{
+    color: white;
+    font-size: 440%;
+    text-align: center;
+    position: relative;
+    margin-top:9%;
+	user-select: none;
+}
+#shadow .banners{
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top:2%;
+	user-select: none;
+}
+#carouselBlock{
+    position: absolute;
+}
+.slideBlock{
+    position: relative;
+    overflow: hidden;
+    width:100%;
+    height:100%;
+}
+.slideUL{
+    width:100%;
+    height:100%;
+}
+.slideUL>li{
+    width:100%;
+    list-style: none;
+}
+.carouselItem{
+    width:100%;
+}
+.carouselIndicators{
+    width:100%;
+    position: absolute;
+    top:70%;
+    margin:0 auto;
+    text-align: center;
+}
+.list-enter-to {
+    transition: all 10s ease;
+    transform: translateX(0);
+}
+
+.list-leave-active {
+    transition: all 5s ease;
+    transform: translateX(-100%)
+}
+
+.list-enter {
+    transform: translateX(100%) 
+}
+
+.list-leave {
+    transform: translateX(0)
+}
+.indicator{
+    position: relative;
+    width:12px;
+    height:12px;
+    float: left;
+    left: 45%;
+    margin:0 9px 0 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.6);
+}
+.indicatorChangeColor{
+    position: relative;
+    width:12px;
+    height:12px;
+    float: left;
+    left: 45%;
+    margin:0 9px 0 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(255,255,255,1);
+}
+#downBlock{
+    width:100%;
+    position: absolute;
+    top:85%;
+	transition: all 0.8s;
+	user-select: none;
+	z-index: 1000;
+}
+#downBlock>img{
+    position: relative;
+    width:5%;
+    margin-left: 50%;
+    left: -2.5%;
+}
+
+.Achievements{
+	position: relative;
+	width:100%;
+	/* overflow: hidden; */
+	/* background-color: #737373; */
+}
+.AchievementsShadow{
+	position: absolute;
+	width:100%;
+	background-color: rgba(255,255,255,1);
+	z-index: 1;
+}
+#upBlock{
+    width:100%;
+    position: absolute;
+    top:5%;
+	transition: all 0.8s;
+	user-select: none;
+	z-index: 1000;
+	opacity: 0;
+}
+#upBlock>img{
+    position: relative;
+    width:5%;
+    margin-left: 50%;
+    left: -2.5%;
+}
+
+.AchievementsTitle{
+    color: black;
+    font-size: 440%;
+    text-align: center;
+    position: relative;
+    margin-top:11%;
+	user-select: none;
+	opacity: 0;
+}
+.AchievementsBanners{
+    color: black;
+	font-size: 140%;
+    text-align: center;
+    position: relative;
+	user-select: none;
+	margin-top: -1%;
+	opacity: 0;
+}
+.AchievementsNavOuter{
+	height: 4%;
+	width: 0;
+	background-color: #71abe5;
+	margin: 5% 0 0 5%;
+}
+.AchievementsNavInner{
+	height: 100%;
+	width: 0;
+	background-color: #b1d4f7;
+}
+.AchievementsNavTest{
+	color: #525252;
+	font-size: 230%;
+	position: relative;
+	user-select: none;
+	margin-left: 2%;
+	display: none;
+}
+.AchievementsModule{
+	width: 41%;
+	height: 25%;
+	margin: 5% 0 0 6%;
+	float: left;
+	border: 1px solid #c4c4c4;
+	box-shadow: 0 0 5px darkgray;
+	opacity: 0;
+}
+.AchievementsModule:hover{
+    box-shadow: 0 0 20px darkgray;
+    transition: 0.3s;
+}
+.AchievementsModuleInsetImg{
+	height: 100%;
+	width: 40%;
+	background-size: 100% 100%;
+	float: left;
+}
+.AchievementsModuleInset{
+	height: 100%;
+	width: 60%;
+	float: left;
+}
+.AchievementsModuleInsetTitle{
+	text-align: center;
+	font-size: 200%;
+	color: black;
+}
+.AchievementsModuleInsetLine{
+	width: 90%;
+	margin: 1% auto;
+    height: 1px;
+    border-top: solid #c4c4c4 1px;
+}
+
+
+
+
+

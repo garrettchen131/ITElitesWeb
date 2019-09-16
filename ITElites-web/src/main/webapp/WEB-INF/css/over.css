@@ -1,0 +1,248 @@
+/* 概况 */
+#overshadow{
+    background-color: rgba(98,182,186,0.5);
+    width:100%;
+    position: absolute;
+}
+#headerPicBlock{
+    position: relative;
+    width:100%;
+    height:470px;
+    overflow: hidden;
+}
+#headerPic{
+    width:100%;
+    height:450px;
+    overflow: hidden;
+}
+#headerPic>img{
+    width:100%;
+}
+#introduceITCultivate{
+    width:100%;
+    background-color: #dce6dc;
+    position: relative;
+}
+#introduceITCultivate h1{
+    text-align: center;
+    padding-top: 2%;
+}
+#introduceITCultivate p{
+    text-align: center;
+}
+#ITcontent{
+    width:100%;
+}
+#ITimg{
+    width:20%;
+    margin-left: 5%;
+    padding-bottom: 5%;
+}
+#introduceITCultivate img{
+    width:100%;
+}
+#ITtext{
+    width:60%;
+    position: relative;
+    float: right;
+    top:-360px; 
+    right: 11%;
+}
+#ITtext p{
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+    line-height: 200%;
+}
+#ITcontent button{
+    float: right;
+    position: relative;
+    top:-360px;
+    right:15%;
+    width:50%;
+    line-height: 300%;
+    border:0;
+    background-color: #dce6dc;
+    font-weight: bold;
+    outline: none;
+    text-align: right;
+    cursor: pointer;
+}
+
+/* 各组介绍(概况) */
+#Aside{ 
+    position: fixed;
+    width:11%;
+    left: 89%;
+    z-index: 999;
+}
+.asides{
+    width:28%;
+    height:8%;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    top:-40%;
+    left: 72%;
+}
+#Aside .imgs{
+	position: relative;
+	height: 30px;
+	width: 30px;
+    top: -20%;
+    float: right;
+    margin-left: 10px;
+	cursor: pointer;
+    user-select: none;
+}
+#Aside .sort{
+    cursor: pointer;
+    user-select: none;
+    font-size: 20px;
+	color: white;
+	float: left;
+	position: relative;
+	top: -24%;
+    left: 10%;
+}
+
+/* 组介绍 */
+#groupIntroBlock{
+    position: relative;
+    min-height:3700px;
+}
+#groupIntroduce{
+    position: absolute;
+}
+.groupIntroduce{
+    width:100%;
+    z-index: 0;
+}
+.leftbgimg{
+    width:15%;
+    position: relative;
+    left: 5%;
+    top:10%;
+}
+.leftbgimg>img,.rightbgimg>img{
+    width:100%;
+	height: 100%;
+}
+.rightbgimg{
+    width:15%;
+    position: relative;
+    float: right;
+    right:5%;
+    top: 2%;
+}
+
+#BianChengGroup,#ArtGroup,#productsGroup,#teacherSkillGroup,#mediaGroup{
+	height: 65%;
+	width: 82%;
+	margin-top: 7%;
+	margin-left: 4%;
+	background-color: #cfdeba;
+	transform:skew(-6deg);
+}
+.groupsBlock{
+    float: left;
+    position: relative;
+    word-wrap:break-word;
+	height: 100%;
+	width: 8%;
+}
+.groupsBlock_click{
+	float: left;
+	position: relative;
+	word-wrap:break-word ;
+	height: 100%;
+    width: 28%;
+}
+.groupsBlock>p{
+    text-align: center;
+}
+.groupsBlockTitle{
+	background-color: #cce7c6;
+    float: left;
+    position: relative;
+	height: 100%;
+	width: 87.5%;
+	cursor: pointer;
+	box-shadow: 0 -2px 3px -1px #1687b1;
+	color: #777b2d;
+}
+.groupsBlockTitle:hover{
+	background-color: #d2e0e5;
+	color: #4483ab;
+}
+.groupsBlockTitle_click{
+	background-color: #d2e0e5;
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 25%;
+	cursor: pointer;
+	box-shadow: 0 -2px 3px -1px #1687b1;
+    color: #4483ab;
+}
+.groupsBlockTitlePart{
+	font-size: 150%;
+	text-align: center;
+    position: relative;
+    top:42%;
+    user-select: none;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-decoration: underline
+}
+.groupsBlockContent{
+	background-color: #cfdeba;
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 12.5%;
+}
+.groupsBlockContent_click{
+	background-color: #cfdeba;
+	float: left;
+	position: relative;
+	height: 100%;
+    width: 75%;
+}
+.groupsBlockContent_p{
+	display: none;
+}
+.groupsBlockContent_click_p{
+	font-size: 100%;
+	text-align: left;
+	padding: 10% 5% 0 7%;
+    line-height: 180%;
+}
+.InitialBlockTitle{
+	background-color: #b8cfa5;
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 7%;
+	cursor: pointer;
+	box-shadow: 0 -2px 3px -1px #0f2d57;
+	color: #777b2d;
+}
+.InitialBlockContent{
+	background-color: #cfdeba;
+	float: left;
+	position: relative;
+	height: 100%;
+	width: 1%;
+}
+.InitialIntroduce,.InitialIntroduce_Art{
+	height: 100%;
+	width: 20%;
+	position: relative;
+	display:inline-block;
+}
+.InitialIntroduce p,.InitialIntroduce_Art p{
+	text-align: left;
+	padding: 10% 5% 0 2%;
+	line-height: 180%;
+}
