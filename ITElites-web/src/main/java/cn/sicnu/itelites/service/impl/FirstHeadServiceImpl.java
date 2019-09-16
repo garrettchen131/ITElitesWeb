@@ -17,6 +17,7 @@ public class FirstHeadServiceImpl implements IFirstHeadService {
 
     @Override
     public List<FirstHeadDTO> getAllFirstHead() {
+
         List<FirstHead> firstHeadList = firstHeadDAO.queryAllFirstHead();
         List<FirstHeadDTO> dtoList = new ArrayList<>();
         firstHeadList.forEach(e -> {
