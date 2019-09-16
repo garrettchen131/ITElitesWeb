@@ -3,8 +3,7 @@ package cn.sicnu.itelites.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class SecondHead implements Serializable
-{
+public class SecondHead implements Serializable {
     private Integer secondHeadId;
     private String secondHeadName;
     private String secondHeadUrl;
@@ -15,87 +14,70 @@ public class SecondHead implements Serializable
     private Integer priority;
 
 
-    public SecondHead()
-    {
+    public SecondHead() {
     }
 
-    public String getSecondHeadUrl()
-    {
+    public String getSecondHeadUrl() {
         return secondHeadUrl;
     }
 
-    public void setSecondHeadUrl(String secondHeadUrl)
-    {
+    public void setSecondHeadUrl(String secondHeadUrl) {
         this.secondHeadUrl = secondHeadUrl;
     }
 
-    public Integer getPriority()
-    {
+    public Integer getPriority() {
         return priority;
     }
 
-    public Integer getSecondHeadId()
-    {
+    public Integer getSecondHeadId() {
         return secondHeadId;
     }
 
-    public void setSecondHeadId(Integer secondHeadId)
-    {
+    public void setSecondHeadId(Integer secondHeadId) {
         this.secondHeadId = secondHeadId;
     }
 
-    public String getSecondHeadName()
-    {
+    public String getSecondHeadName() {
         return secondHeadName;
     }
 
-    public void setSecondHeadName(String secondHeadName)
-    {
+    public void setSecondHeadName(String secondHeadName) {
         this.secondHeadName = secondHeadName;
     }
 
-    public Integer getFirstHeadId()
-    {
+    public Integer getFirstHeadId() {
         return firstHeadId;
     }
 
-    public void setFirstHeadId(Integer firstHeadId)
-    {
+    public void setFirstHeadId(Integer firstHeadId) {
         this.firstHeadId = firstHeadId;
     }
 
-    public Date getCreateTime()
-    {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime)
-    {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Integer getValid()
-    {
+    public Integer getValid() {
         return valid;
     }
 
-    public void setValid(Integer valid)
-    {
+    public void setValid(Integer valid) {
         this.valid = valid;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public void setPriority(Integer priority)
-    {
+    public void setPriority(Integer priority) {
         this.priority = priority;
     }
 }

@@ -12,14 +12,12 @@ import org.springframework.web.servlet.View;
 
 @Controller
 @RequestMapping("*.do")
-public class FirstHeadAction
-{
+public class FirstHeadAction {
     @Autowired
     private IFirstHeadService firstHeadService;
 
     @GetMapping("/gethead")
-    private View getFirstHead()
-    {
+    private View getFirstHead() {
         return new RestData(firstHeadService.getAllFirstHead());
     }
 }

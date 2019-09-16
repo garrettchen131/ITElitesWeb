@@ -9,29 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
-public class RestData implements View
-{
+public class RestData implements View {
     private Object data;
 
-    public RestData(Object data)
-    {
+    public RestData(Object data) {
         this.data = data;
     }
 
     @Override
-    public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception
-    {
+    public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         JSONObject jsonObject = new JSONObject(true);
         jsonObject.put("error", 0);
         jsonObject.put("reason", "OK");
-        if (data != null)
-        {
-            if (data instanceof JSON)
-            {
+        if (data != null) {
+            if (data instanceof JSON) {
                 jsonObject.put("data", data);
-            }
-            else
-            {
+            } else {
                 jsonObject.put("data", JSON.toJSON(data));
             }
             httpServletResponse.setCharacterEncoding("UTF-8");
