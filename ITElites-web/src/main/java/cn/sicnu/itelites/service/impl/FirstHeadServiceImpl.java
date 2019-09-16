@@ -11,17 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class FirstHeadServiceImpl implements IFirstHeadService
-{
+public class FirstHeadServiceImpl implements IFirstHeadService {
     @Autowired
     private IFirstHeadDAO firstHeadDAO;
+
     @Override
-    public List<FirstHeadDTO> getAllFirstHead()
-    {
+    public List<FirstHeadDTO> getAllFirstHead() {
         List<FirstHead> firstHeadList = firstHeadDAO.queryAllFirstHead();
         List<FirstHeadDTO> dtoList = new ArrayList<>();
-        firstHeadList.forEach(e->{
-            dtoList.add(new FirstHeadDTO(e.getFirstHeadId(),e.getFirstHeadName(),e.getFirstHeadUrl(),e.getPriority()));
+        firstHeadList.forEach(e -> {
+            dtoList.add(new FirstHeadDTO(e.getFirstHeadId(), e.getFirstHeadName(), e.getFirstHeadUrl(), e.getPriority()));
         });
         return dtoList;
     }

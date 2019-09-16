@@ -4,7 +4,6 @@ import cn.sicnu.itelites.entity.FirstHead;
 
 import java.util.List;
 
-public interface IFirstHeadDAO
-{
+public interface IFirstHeadDAO {
     List<FirstHead> queryAllFirstHead();
 }
