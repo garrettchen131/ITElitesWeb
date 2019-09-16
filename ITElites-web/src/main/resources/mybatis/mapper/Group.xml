@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sicnu.itelites.dao.IGroupDAO">
+    <cache eviction="FIFO" flushInterval="200"/>
+    <insert id="insertGroup" useGeneratedKeys="true" keyColumn="group_id" keyProperty="groupId">
+        INSERT INTO
+        tb_group (group_id,group_name,create_time,last_edit_time)
+        VALUES
+        (#{groupId},#{groupName},#{groupTime},#{lastEditTime});
+    </insert>
+    <update id="updateGroup" parameterType="cn.sicnu.itelites.entity.Group">
+        UPDATE tb_group
+        <set>
+            <if test="groupName != null">group_name=#{groupName}</if>
+            <if test="createTime != null">create_time=#{createTime}</if>
+            <if test="lastEditTime != null">last_edit_time=#{lastEditTime}</if>
+            <if test="groupImg != null">group_img=#{groupImg}</if>
+            <if test="groupDesc != null">group_desc=#{groupDesc}</if>
+        </set>
+        WHERE group_id=#{groupId};
+    </update>
+    <select id="queryGroup" resultType="Group">
+        SELECT
+        group_id,group_name,create_time,last_edit_time,group_img,group_desc
+        FROM
+        tb_group;
+    </select>
+    <select id="queryGroupById" resultType="Group">
+        SELECT
+        group_id,group_name,create_time,last_edit_time,group_img,group_desc
+        FROM
+        tb_group;
+    </select>
+</mapper>
