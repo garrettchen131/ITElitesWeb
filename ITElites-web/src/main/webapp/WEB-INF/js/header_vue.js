@@ -45,6 +45,7 @@ new Vue({
     const url = window.location.href;
     const index = url.lastIndexOf("/");
     this.subpage = url.substring(index + 1, url.length);
+    this.get();
   },
   methods: {
     navsId: function(index) {
@@ -55,7 +56,8 @@ new Vue({
     get:function(){
       //发送get请求
       this.$http.get('/gethead.do').then(function(res){
-          document.write(res.body);       //成功
+          console.log('请求成功');
+          console.log(res.body);
       },function(){
           console.log('请求失败处理');     //失败
       });
