@@ -37,11 +37,13 @@ CREATE TABLE `tb_team`(
 CREATE TABLE `tb_group`(
     `group_id` INT AUTO_INCREMENT,
     `group_name` VARCHAR(20) NOT NULL UNIQUE,
+    `team_id` INT NOT NULL,
     `create_time` DATETIME DEFAULT NULL,
     `last_edit_time` DATETIME DEFAULT NULL,
     `group_img` VARCHAR(1024) DEFAULT NULL,
     `group_desc` VARCHAR(1024) DEFAULT NULL,
-    PRIMARY KEY(`group_id`)
+    PRIMARY KEY(`group_id`),
+    CONSTRAINT `pk_group_team` FOREIGN KEY(`team_id`) REFERENCES `tb_team`(`team_id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `tb_stu_register`(
