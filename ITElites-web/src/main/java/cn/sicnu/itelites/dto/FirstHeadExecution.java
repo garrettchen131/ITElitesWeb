@@ -27,7 +27,13 @@ public class FirstHeadExecution {
     public FirstHeadExecution(FirstHeadStateEnum stateEnum, List<FirstHead> firstHeadList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.firstHeadList = firstHeadList;
+        if (firstHeadList.size() == 1) {
+            this.firstHead = firstHeadList.get(0);
+            this.count = 1;
+        }else {
+            this.firstHeadList = firstHeadList;
+            this.count = firstHeadList.size();
+        }
     }
 
     public int getState() {

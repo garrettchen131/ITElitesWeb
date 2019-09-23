@@ -9,6 +9,7 @@ public class TeamExecution {
     private int state;
     private String stateInfo;
     private int count;
+    private Team team;
     private List<Team> teamList;
 
 
@@ -17,11 +18,31 @@ public class TeamExecution {
         this.stateInfo = stateEnum.getStateInfo();
     }
 
+    public TeamExecution(TeamStateEnum stateEnum, Team team) {
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        this.team = team;
+        this.count = 1;
+    }
+
     public TeamExecution(TeamStateEnum stateEnum, List<Team> teamList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.teamList = teamList;
-        this.count = teamList.size();
+        if (teamList.size() == 1) {
+            this.team = teamList.get(0);
+            this.count = 1;
+        }else {
+            this.teamList = teamList;
+            this.count = teamList.size();
+        }
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
     }
 
     public int getState() {

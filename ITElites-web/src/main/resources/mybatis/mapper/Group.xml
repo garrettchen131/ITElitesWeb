@@ -8,7 +8,7 @@
         tb_group (group_name,team_id,create_time,last_edit_time,group_img,group_desc)
         VALUES
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            #{groupName},#{createTime},#{lastEditTime},#{team_id}
+            #{groupName},#{teamId},#{createTime},#{lastEditTime},
             <if test="groupImg == null">
                 'NOImg',
             </if>
@@ -37,7 +37,7 @@
     </update>
     <select id="queryGroup" resultType="Group" parameterType="java.util.Map">
         SELECT
-        group_id,group_name,create_time,last_edit_time,group_img,group_desc
+        group_id,group_name,team_id,create_time,last_edit_time,group_img,group_desc
         FROM
         tb_group
         <if test="groupName != null and groupName != &quot;&quot;">

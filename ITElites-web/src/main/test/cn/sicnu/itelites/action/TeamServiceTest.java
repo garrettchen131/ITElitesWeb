@@ -1,6 +1,8 @@
 package cn.sicnu.itelites.action;
 
 import cn.sicnu.itelites.BaseTest;
+import cn.sicnu.itelites.dto.TeamExecution;
+import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.service.ITeamService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,37 +17,72 @@ public class TeamServiceTest extends BaseTest {
 
     @Test
     public void addTest() {
-        TeamDTO teamDTO = new TeamDTO();
-        teamDTO.setTeamName("testService");
-        teamDTO.setTeamDesc("11111");
-        boolean ret = teamService.addTeam(teamDTO);
-        assertEquals(true, ret);
+        Team team = new Team();
+        team.setTeamName("编程组");
+        team.setTeamDesc("learn coding");
+        try{
+            TeamExecution execution = teamService.addTeam(team);
+            assertEquals(1,execution.getCount());
+            assertEquals(3,(int)execution.getTeam().getTeamId());
+        }catch (RuntimeException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     @Test
-    public void queryAllTest() {
-        List<TeamDTO> list = null;
-        try {
-            list = teamService.getAllTeam();
-        } catch (RuntimeException e) {
+    public void changeTest() {
+        Team team = new Team();
+        team.setTeamId(2);
+        team.setTeamName("美工组");
+        team.setTeamDesc("meigongzu");
+        try{
+            TeamExecution execution = teamService.changeTeam(team);
+            assertEquals(1,execution.getCount());
+            assertEquals(2,(int)execution.getTeam().getTeamId());
+            assertEquals(0,execution.getState());
+        }catch (RuntimeException e)
+        {
             e.printStackTrace();
         }
-        assertEquals(1,list.size());
     }
+
     @Test
-    public void queryByIdTest() {
-        TeamDTO teamDTO = null;
-        try {
-            teamDTO = teamService.getTeamById(1);
-        } catch (RuntimeException e) {
+    public void getAllTeamTest() {
+        try{
+            TeamExecution execution = teamService.getAllTeam();
+            assertEquals(3,execution.getCount());
+            assertEquals(0,execution.getState());
+        }catch (RuntimeException e)
+        {
             e.printStackTrace();
         }
-        assertEquals("testService",teamDTO.getTeamName());
     }
+
     @Test
-    public void queryByNameTest() {
-        TeamDTO teamDTO = teamService.getTeamByName("testService");
-        int id = teamDTO.getTeamId();
-        assertEquals(1,id);
+    public void getTeamByIdTest() {
+        try{
+            TeamExecution execution = teamService.getTeamById(3);
+            assertEquals(1,execution.getCount());
+            assertEquals("编程组",execution.getTeam().getTeamName());
+            assertEquals(0,execution.getState());
+        }catch (RuntimeException e)
+        {
+            e.printStackTrace();
+        }
     }
+
+    @Test
+    public void getTeamByNameTest() {
+        try{
+            TeamExecution execution = teamService.getTeamByName("编程组");
+            assertEquals(1,execution.getCount());
+            assertEquals(3,(int)execution.getTeam().getTeamId());
+            assertEquals(0,execution.getState());
+        }catch (RuntimeException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 }

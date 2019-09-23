@@ -13,12 +13,6 @@ public class Team implements Serializable {
     public Team() {
     }
 
-    public Team(TeamDTO teamDTO) {
-        this.setTeamId(teamDTO.getTeamId());
-        this.setTeamDesc(teamDTO.getTeamDesc());
-        this.setTeamName(teamDTO.getTeamName());
-    }
-
     public Integer getTeamId() {
         return teamId;
     }

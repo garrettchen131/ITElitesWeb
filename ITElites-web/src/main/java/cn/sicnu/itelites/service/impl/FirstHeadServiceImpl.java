@@ -2,13 +2,11 @@ package cn.sicnu.itelites.service.impl;
 
 import cn.sicnu.itelites.dao.IFirstHeadDAO;
 import cn.sicnu.itelites.dto.FirstHeadExecution;
-import cn.sicnu.itelites.entity.FirstHead;
 import cn.sicnu.itelites.enums.FirstHeadStateEnum;
 import cn.sicnu.itelites.service.IFirstHeadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class FirstHeadServiceImpl implements IFirstHeadService {

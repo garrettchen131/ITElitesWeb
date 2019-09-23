@@ -4,14 +4,13 @@ import cn.sicnu.itelites.dto.GroupExecution;
 import cn.sicnu.itelites.entity.Group;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 public interface IGroupService {
     @Transactional
-    public boolean addGroup(Group group);
+    public GroupExecution addGroup(Group group);
 
     @Transactional
-    public boolean change(Group group);
+    public GroupExecution change(Group group);
 
     @Transactional(readOnly = true)
     public GroupExecution getAll();

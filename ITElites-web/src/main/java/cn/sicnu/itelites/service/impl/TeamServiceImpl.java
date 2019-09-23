@@ -33,7 +33,7 @@ public class TeamServiceImpl implements ITeamService {
         {
             throw e;
         }
-        return new TeamExecution(TeamStateEnum.ADD_SUCCESS);
+        return new TeamExecution(TeamStateEnum.ADD_SUCCESS,team);
     }
 
     @Override
@@ -41,17 +41,23 @@ public class TeamServiceImpl implements ITeamService {
         int id = team.getTeamId();
         Map<String, Object> params = new HashMap<>();
         params.put("teamId", id);
-        List<Team> list;
         try {
-            list = teamDAO.queryTeam(params);
-            if (list.size() != 1)
-            {
-                throw new OperationException(-1, "没有次小组！");
+            List<Team> list = teamDAO.queryTeam(params);
+            if (list.size() == 0) {
+                return new TeamExecution(TeamStateEnum.NULL_TEAM);  //这里我认为应该采用返回的形式而非抛出异常（2019.9.23）
+            }
+            else {
+                try{
+                    int effectNum = teamDAO.updateTeam(team);
+                    if (effectNum <= 0) throw new OperationException(-1, "更新失败");
+                }catch (RuntimeException e) {
+                    throw new OperationException(-1, "更新失败");
+                }
             }
         } catch (RuntimeException e) {
             throw e;
         }
-        return new TeamExecution(TeamStateEnum.CHANGE_SUCCESS);
+        return new TeamExecution(TeamStateEnum.CHANGE_SUCCESS,team);
     }
 
     @Override

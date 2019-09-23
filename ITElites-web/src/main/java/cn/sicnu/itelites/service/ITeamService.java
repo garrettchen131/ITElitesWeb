@@ -5,7 +5,6 @@ import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.exception.OperationException;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 
 public interface ITeamService {
     @Transactional

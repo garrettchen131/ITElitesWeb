@@ -2,6 +2,7 @@ package cn.sicnu.itelites.dto;
 
 import cn.sicnu.itelites.entity.Group;
 import cn.sicnu.itelites.entity.Team;
+import cn.sicnu.itelites.enums.GroupStateEnum;
 import cn.sicnu.itelites.enums.TeamStateEnum;
 
 import java.util.List;
@@ -10,19 +11,42 @@ public class GroupExecution {
     private int state;
     private String stateInfo;
     private int count;
+    private Group group;
     private List<Group> groupList;
 
 
-    public GroupExecution(TeamStateEnum stateEnum) {
+    public GroupExecution(GroupStateEnum stateEnum) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
+        this.count = 0;
     }
 
-    public GroupExecution(TeamStateEnum stateEnum, List<Group> groupList) {
+    public GroupExecution(GroupStateEnum stateEnum, Group group) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.groupList = groupList;
-        this.count = groupList.size();
+        this.group = group;
+        this.count = 1;
+    }
+
+    public GroupExecution(GroupStateEnum stateEnum, List<Group> groupList) {
+        this.state = stateEnum.getState();
+        this.stateInfo = stateEnum.getStateInfo();
+        if (groupList.size() == 1) {
+            this.group = groupList.get(0);
+            this.count = 1;
+        }
+        else {
+            this.groupList = groupList;
+            this.count = groupList.size();
+        }
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     public int getState() {

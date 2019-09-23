@@ -9,6 +9,7 @@
     <artifactId>website</artifactId>
     <version>1.0</version>
   </parent>
+  <version>0.1.0</version>
   <artifactId>web</artifactId>
   <packaging>war</packaging>
 
