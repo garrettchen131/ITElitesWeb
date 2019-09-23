@@ -70,7 +70,7 @@ CREATE TABLE `tb_stu_register`(
 
 CREATE TABLE `tb_exhibition`(
     `exhibition_id` INT AUTO_INCREMENT,
-    `exhibition_name` VARCHAR(50) NOT NULL,
+    `exhibition_name` VARCHAR(50) NOT NULL UNIQUE,
     `create_time` DATETIME DEFAULT NULL,
     `last_edit_time` DATETIME DEFAULT NULL,
     `exhibition_img` VARCHAR(1024) DEFAULT NULL,

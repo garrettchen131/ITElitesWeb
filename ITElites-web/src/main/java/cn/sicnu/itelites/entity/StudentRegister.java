@@ -1,6 +1,8 @@
 package cn.sicnu.itelites.entity;
 
-public class StudentRegister {
+import java.io.Serializable;
+
+public class StudentRegister implements Serializable {
     private Integer studentId;
     private Long studentNum;
     private String studentName;

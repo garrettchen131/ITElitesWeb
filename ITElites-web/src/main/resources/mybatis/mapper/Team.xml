@@ -5,30 +5,40 @@
     <cache eviction="FIFO" flushInterval="200"/>
     <insert id="insertTeam" useGeneratedKeys="true" keyColumn="team_id" keyProperty="teamId">
         INSERT INTO
-        tb_team (team_id,team_name,create_time,last_edit_time)
+        tb_team (team_name,create_time,last_edit_time,team_desc)
         VALUES
-        (#{teamId},#{teamName},#{createTime},#{lastEditTime});
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{teamName},#{createTime},#{lastEditTime},
+            <if test="teamDesc == null">
+                'NODesc',
+            </if>
+            <if test="teamDesc != null">
+                #{teamDesc},
+            </if>
+        </trim>
     </insert>
     <update id="updateTeam" parameterType="cn.sicnu.itelites.entity.Team">
         UPDATE tb_team
         <set>
-            <if test="teamName != null">team_name=#{teamName}</if>
-            <if test="createTime != null">create_time=#{createTime}</if>
-            <if test="last_edit_time != null">last_edit_time=#{lastEditTime}</if>
-            <if test="team_desc != null">team_desc=#{teamDesc}</if>
+            <if test="teamName != null">team_name=#{teamName},</if>
+            <if test="createTime != null">create_time=#{createTime},</if>
+            <if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
+            <if test="teamDesc != null">team_desc=#{teamDesc},</if>
         </set>
         WHERE team_id=#{teamId};
     </update>
-    <select id="queryTeam" resultType="Team">
+    <select id="queryTeam" resultType="Team" parameterType="java.util.Map">
         SELECT
         team_id,team_name,create_time,last_edit_time,team_desc
         FROM
-        tb_team;
+        tb_team
+        <if test="teamName != null and teamName != &quot;&quot;">
+            WHERE team_name=#{teamName}
+        </if>
+        <if test="teamId != null and teamId != &quot;&quot;">
+            WHERE team_id=#{teamId}
+        </if>
+        ;
     </select>
-    <select id="queryTeamById" resultType="Team">
-        SELECT
-        team_id,team_name,create_time,last_edit_time,team_desc
-        FROM
-        tb_team;
-    </select>
+
 </mapper>

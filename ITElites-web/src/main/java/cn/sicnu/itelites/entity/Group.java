@@ -1,16 +1,26 @@
 package cn.sicnu.itelites.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Group {
+public class Group implements Serializable {
     private Integer groupId;
-    private Integer groupName;
+    private String groupName;
+    private Integer teamId;
     private Date createTime;
     private Date lastEditTime;
     private String groupImg;
     private String groupDesc;
 
     public Group() {
+    }
+
+    public Integer getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Integer teamId) {
+        this.teamId = teamId;
     }
 
     public Integer getGroupId() {
@@ -21,11 +31,11 @@ public class Group {
         this.groupId = groupId;
     }
 
-    public Integer getGroupName() {
+    public String getGroupName() {
         return groupName;
     }
 
-    public void setGroupName(Integer groupName) {
+    public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 

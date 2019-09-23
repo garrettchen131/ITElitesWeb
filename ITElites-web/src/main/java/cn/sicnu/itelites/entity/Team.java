@@ -1,8 +1,9 @@
 package cn.sicnu.itelites.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Team {
+public class Team implements Serializable {
     private Integer teamId;
     private String teamName;
     private Date createTime;
@@ -10,6 +11,12 @@ public class Team {
     private String teamDesc;
 
     public Team() {
+    }
+
+    public Team(TeamDTO teamDTO) {
+        this.setTeamId(teamDTO.getTeamId());
+        this.setTeamDesc(teamDTO.getTeamDesc());
+        this.setTeamName(teamDTO.getTeamName());
     }
 
     public Integer getTeamId() {
