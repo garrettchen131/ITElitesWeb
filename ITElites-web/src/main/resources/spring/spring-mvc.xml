@@ -16,10 +16,9 @@
 
     <mvc:default-servlet-handler/>
 
-    <mvc:resources mapping="/css/**" location="/WEB-INF/css/"/>
-    <mvc:resources mapping="/js/**" location="/WEB-INF/js/"/>
-    <mvc:resources mapping="/link/**" location="/WEB-INF/link/"/>
-    <mvc:resources mapping="/font/**" location="/WEB-INF/font/"/>
-    <mvc:resources mapping="/static/**" location="/WEB-INF/static/"/>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".html"/>
+    </bean>
 
 </beans>

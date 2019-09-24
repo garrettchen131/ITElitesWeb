@@ -37,7 +37,7 @@
   </servlet-mapping>
   <!-- 4、配置项目中的编码过滤器 -->
   <filter>
-    <filter-name>EncodingFitler</filter-name>
+    <filter-name>EncodingFilter</filter-name>
     <filter-class>
       org.springframework.web.filter.CharacterEncodingFilter
     </filter-class>
@@ -47,7 +47,7 @@
     </init-param>
   </filter>
   <filter-mapping>
-    <filter-name>EncodingFitler</filter-name>
+    <filter-name>EncodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
   <filter>

@@ -1,7 +1,7 @@
 package cn.sicnu.itelites.action;
 
 import cn.sicnu.itelites.BaseTest;
-import cn.sicnu.itelites.dto.GroupExecution;
+import cn.sicnu.itelites.dto.execution.GroupExecution;
 import cn.sicnu.itelites.entity.Group;
 import cn.sicnu.itelites.service.IGroupService;
 import org.junit.Test;
@@ -65,8 +65,8 @@ public class GroupServiceTest extends BaseTest {
         try {
             GroupExecution execution = groupService.getGroupById(1);
             assertEquals(0, execution.getState());
-            assertEquals("Java", execution.getGroup().getGroupName());
-            assertEquals(3, (int)execution.getGroup().getTeamId());
+            assertEquals("Java", execution.getValue().getGroupName());
+            assertEquals(3, (int)execution.getValue().getTeamId());
         } catch (RuntimeException e) {
             e.printStackTrace();
         }
@@ -78,8 +78,8 @@ public class GroupServiceTest extends BaseTest {
         try {
             GroupExecution execution = groupService.getGroupByName("Java");
             assertEquals(0, execution.getState());
-            assertEquals(1, (int)execution.getGroup().getGroupId());
-            assertEquals(3, (int)execution.getGroup().getTeamId());
+            assertEquals(1, (int)execution.getValue().getGroupId());
+            assertEquals(3, (int)execution.getValue().getTeamId());
         } catch (RuntimeException e) {
             e.printStackTrace();
         }

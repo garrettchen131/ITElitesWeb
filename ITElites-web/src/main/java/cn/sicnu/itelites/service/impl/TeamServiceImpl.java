@@ -1,7 +1,7 @@
 package cn.sicnu.itelites.service.impl;
 
 import cn.sicnu.itelites.dao.ITeamDAO;
-import cn.sicnu.itelites.dto.TeamExecution;
+import cn.sicnu.itelites.dto.execution.TeamExecution;
 import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.enums.TeamStateEnum;
 import cn.sicnu.itelites.exception.OperationException;
@@ -28,7 +28,7 @@ public class TeamServiceImpl implements ITeamService {
         int effectNum;
         try{
             effectNum = teamDAO.insertTeam(team);
-            if (effectNum <= 0) throw new OperationException(-1,"添加失败");   // TODO 这里是抛异常好还是返回对应的状态好？？？
+            if (effectNum <= 0) throw new OperationException(TeamStateEnum.ADD_FAIL.getState(),TeamStateEnum.ADD_FAIL.getStateInfo());   // TODO 这里是抛异常好还是返回对应的状态好？？？
         }catch (RuntimeException e)
         {
             throw e;
@@ -49,9 +49,9 @@ public class TeamServiceImpl implements ITeamService {
             else {
                 try{
                     int effectNum = teamDAO.updateTeam(team);
-                    if (effectNum <= 0) throw new OperationException(-1, "更新失败");
+                    if (effectNum <= 0) throw new OperationException(TeamStateEnum.CHANGE_FAIL.getState(),TeamStateEnum.CHANGE_FAIL.getStateInfo());
                 }catch (RuntimeException e) {
-                    throw new OperationException(-1, "更新失败");
+                    throw e;
                 }
             }
         } catch (RuntimeException e) {
@@ -61,13 +61,13 @@ public class TeamServiceImpl implements ITeamService {
     }
 
     @Override
-    public TeamExecution getAllTeam() throws OperationException{
+    public TeamExecution getAllTeam(){
         return new TeamExecution(TeamStateEnum.GET_SUCCESS,teamDAO.queryTeam(null));
     }
 
     @Override
-    public TeamExecution getTeamById(int id) throws OperationException{
-        if (id < 1) throw new OperationException(-1, "ID无效");
+    public TeamExecution getTeamById(int id){
+        if (id < 1) return new TeamExecution(TeamStateEnum.INVALID_ID);
         Map<String, Object> params = new HashMap<>();
         params.put("teamId", id);
         List<Team> list = teamDAO.queryTeam(params);
@@ -75,8 +75,8 @@ public class TeamServiceImpl implements ITeamService {
     }
 
     @Override
-    public TeamExecution getTeamByName(String name) throws OperationException{
-        if (name == null || "".equals(name)) throw new OperationException(-1, "Name无效");
+    public TeamExecution getTeamByName(String name){
+        if (name == null || "".equals(name)) return new TeamExecution(TeamStateEnum.INVALID_NAME);
         Map<String, Object> params = new HashMap<>();
         params.put("teamName", name);
         return new TeamExecution(TeamStateEnum.GET_SUCCESS,teamDAO.queryTeam(params));

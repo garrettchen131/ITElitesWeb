@@ -1,6 +1,6 @@
 package cn.sicnu.itelites.service;
 
-import cn.sicnu.itelites.dto.GroupExecution;
+import cn.sicnu.itelites.dto.execution.GroupExecution;
 import cn.sicnu.itelites.entity.Group;
 import org.springframework.transaction.annotation.Transactional;
 

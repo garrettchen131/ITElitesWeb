@@ -1,7 +1,7 @@
 package cn.sicnu.itelites.service.impl;
 
 import cn.sicnu.itelites.dao.IFirstHeadDAO;
-import cn.sicnu.itelites.dto.FirstHeadExecution;
+import cn.sicnu.itelites.dto.execution.FirstHeadExecution;
 import cn.sicnu.itelites.enums.FirstHeadStateEnum;
 import cn.sicnu.itelites.service.IFirstHeadService;
 import org.springframework.beans.factory.annotation.Autowired;

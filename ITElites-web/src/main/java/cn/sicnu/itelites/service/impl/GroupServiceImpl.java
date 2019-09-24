@@ -1,7 +1,7 @@
 package cn.sicnu.itelites.service.impl;
 
 import cn.sicnu.itelites.dao.IGroupDAO;
-import cn.sicnu.itelites.dto.GroupExecution;
+import cn.sicnu.itelites.dto.execution.GroupExecution;
 import cn.sicnu.itelites.entity.Group;
 import cn.sicnu.itelites.enums.GroupStateEnum;
 import cn.sicnu.itelites.exception.OperationException;
@@ -32,9 +32,8 @@ public class GroupServiceImpl implements IGroupService {
         group.setLastEditTime(new Date());
         try{
             int effectNum = groupDAO.insertGroup(group);
-            if (effectNum <= 0) throw new OperationException(-1, "插入失败");
-        }catch (RuntimeException e)
-        {
+            if (effectNum <= 0) throw new OperationException(GroupStateEnum.ADD_FAIL.getState(),GroupStateEnum.ADD_FAIL.getStateInfo());
+        }catch (RuntimeException e) {
             throw e;
         }
         return new GroupExecution(GroupStateEnum.ADD_SUCCESS,group);
@@ -54,9 +53,9 @@ public class GroupServiceImpl implements IGroupService {
                 try {
                     group.setLastEditTime(new Date());
                     int effectNum = groupDAO.updateGroup(group);
-                    if (effectNum <= 0) throw new OperationException(-1, "更新失败");
+                    if (effectNum <= 0) throw new OperationException(GroupStateEnum.CHANGE_FAIL.getState(), GroupStateEnum.CHANGE_FAIL.getStateInfo());
                 }catch (RuntimeException e){
-                    throw new OperationException(-1, "更新失败");
+                    throw e;
                 }
             }
         }catch (RuntimeException e){
@@ -72,6 +71,7 @@ public class GroupServiceImpl implements IGroupService {
 
     @Override
     public GroupExecution getGroupById(int id) {
+        if (id < 1) return new GroupExecution(GroupStateEnum.INVALID_ID);
         Map<String, Object> params = new HashMap<>();
         params.put("groupId", id);
         return new GroupExecution(GroupStateEnum.GET_SUCCESS,groupDAO.queryGroup(params));
@@ -79,6 +79,7 @@ public class GroupServiceImpl implements IGroupService {
 
     @Override
     public GroupExecution getGroupByName(String name) {
+        if (name == null || "".equals(name)) return new GroupExecution(GroupStateEnum.INVALID_NAME);
         Map<String, Object> params = new HashMap<>();
         params.put("groupName", name);
         return new GroupExecution(GroupStateEnum.GET_SUCCESS,groupDAO.queryGroup(params));

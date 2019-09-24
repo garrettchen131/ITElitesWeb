@@ -3,8 +3,8 @@ package cn.sicnu.itelites.enums;
 public enum GroupStateEnum {
 
     ADD_SUCCESS(0, "添加成功"), ADD_FAIL(-1, "添加失败"), NULL_GROUP(404, "空值"),
-    CHANGE_SUCCESS(0, "修改成功"), GET_SUCCESS(0, "查询成功"), NULL_TEAM_ID(-3, "大组空值"),
-    NULL_TEAM(-5, "无此大组")
+    CHANGE_SUCCESS(0, "修改成功"), CHANGE_FAIL(-2, "修改失败"),GET_SUCCESS(0, "查询成功"), NULL_TEAM_ID(-3, "大组空值"),
+    NULL_TEAM(-5, "无此大组"),INVALID_ID(-5,"无效的ID"),INVALID_NAME(-5,"无效的NAME")
     ;
 
     private int state;
