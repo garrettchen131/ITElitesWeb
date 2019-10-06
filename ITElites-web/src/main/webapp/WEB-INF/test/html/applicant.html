@@ -12,12 +12,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no">
 
-    <!-- Google Web Fonts -->
-
     <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-
-
 
 </head>
 <body>
@@ -28,29 +24,77 @@
                 <span class="icon icon-left"></span>
                 返回
             </a>
-            <h1 class="title">添加大组信息</h1>
+            <h1 class="title">添加小组信息</h1>
         </header>
         <div class="content">
             <div class="list-block">
                 <ul>
-                    <!-- 大组名称 text -->
+                    <!-- 学号 text -->
                     <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">大组名称</div>
+                                <div class="item-title label">学号</div>
                                 <div class="item-input">
-                                    <input type="text" id="team-name" placeholder="大组名称">
+                                    <input type="text" id="num" placeholder="学号">
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <!-- 大组描述 textarea  -->
-                    <li class="align-top">
+                    <!-- 姓名 text -->
+                    <li>
                         <div class="item-content">
                             <div class="item-inner">
-                                <div class="item-title label">大组描述</div>
+                                <div class="item-title label">姓名</div>
                                 <div class="item-input">
-                                    <textarea id="team-desc" placeholder="大组描述"></textarea>
+                                    <input type="text" id="name" placeholder="姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 联系电话 text -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">电话</div>
+                                <div class="item-input">
+                                    <input type="text" id="phone" placeholder="电话">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- qqtext -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">qq</div>
+                                <div class="item-input">
+                                    <input type="text" id="qq" placeholder="qq">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 大组第一志愿名称 select -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">第一志愿</div>
+                                <div class="item-input">
+                                    <select id="team-one">
+
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 大组第二志愿名称 select -->
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">第一志愿</div>
+                                <div class="item-input">
+                                    <select id="team-two">
+
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +127,7 @@
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='../resources/js/common.js' charset='utf-8'></script>
-<script type='text/javascript' src='../resources/js/addteam.js' charset='utf-8'></script>
+<script type='text/javascript' src='../resources/js/addapplicant.js' charset='utf-8'></script>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 </html>

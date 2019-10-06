@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Group implements Serializable {
-    private Integer groupId;
-    private String groupName;
-    private Integer teamId;
+    private Integer groupId;    //数据库自动生成的ID主键
+    private String groupName;   //小组名称
+    private Integer teamId;     //小组对应的大组ID，一对多关系
     private Date createTime;
     private Date lastEditTime;
-    private String groupImg;
-    private String groupDesc;
+    private String groupImg;    //小组图片
+    private String groupDesc;   //小组信息描述
 
     public Group() {
     }

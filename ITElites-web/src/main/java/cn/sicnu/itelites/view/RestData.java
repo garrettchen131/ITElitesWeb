@@ -4,21 +4,21 @@ import cn.sicnu.itelites.dto.BaseExecution;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.http.MediaType;
-import org.springframework.web.servlet.View;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
-public class RestData implements View {
-    private String reason = "OK";
-    private Object data;
+public class RestData extends RestView {
 
     public RestData(Object data) {
+        this.error = 0;
+        this.reason = "OK";
         this.data = data;
     }
 
     public RestData(BaseExecution<?> execution) {
+        this.error = 0;
         this.reason = execution.getStateInfo();
         if (execution.getCount() == 1) {
             this.data = execution.getValue();
@@ -30,7 +30,7 @@ public class RestData implements View {
     @Override
     public void render(Map<String, ?> map, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         JSONObject json = new JSONObject(true);
-        json.put("error", 0);
+        json.put("error", error);
         json.put("reason", reason);
         if (data != null) {
             if (data instanceof JSON) {

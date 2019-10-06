@@ -32,9 +32,54 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>SpringMVCServlet</servlet-name>
-    <url-pattern>*.action</url-pattern> <!-- 设置访问处理路径 -->
     <url-pattern>/</url-pattern><!-- 静态资源映射 -->
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Kaptcha</servlet-name>
+    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+    <init-param>
+      <param-name>kaptcha.border</param-name>
+      <param-value>no</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.textproducer.font.color</param-name>
+      <param-value>red</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.image.width</param-name>
+      <param-value>135</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.textproducer.char.string</param-name>
+      <param-value>ABCEDFKHPRSTWX63491857</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.image.height</param-name>
+      <param-value>50</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.textproducer.font.size</param-name>
+      <param-value>43</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.noise.color</param-name>
+      <param-value>black</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.textproducer.char.length</param-name>
+      <param-value>4</param-value>
+    </init-param>
+    <init-param>
+      <param-name>kaptcha.textproducer.font.names</param-name>
+      <param-value>Arial</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Kaptcha</servlet-name>
+    <url-pattern>/Kaptcha</url-pattern>
+  </servlet-mapping>
+
   <!-- 4、配置项目中的编码过滤器 -->
   <filter>
     <filter-name>EncodingFilter</filter-name>

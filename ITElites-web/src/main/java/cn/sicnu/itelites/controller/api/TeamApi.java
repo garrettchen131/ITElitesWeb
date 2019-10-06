@@ -5,6 +5,7 @@ import cn.sicnu.itelites.dto.execution.TeamExecution;
 import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.exception.OperationException;
 import cn.sicnu.itelites.service.ITeamService;
+import cn.sicnu.itelites.util.CodeUtil;
 import cn.sicnu.itelites.view.RestData;
 import cn.sicnu.itelites.view.RestError;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.View;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/team")
 public class TeamApi {
@@ -22,23 +25,24 @@ public class TeamApi {
     private ITeamService teamService;
 
     @GetMapping("/get.do")
-    private View getTeam()
-    {
+    private View getTeam() {
         return new RestData(teamService.getAllTeam().getValueList());
     }
 
     @PostMapping("/add.do")
-    private View addTeam(@RequestBody Team team)
-    {
+    private View addTeam(@RequestBody Team team, HttpServletRequest request) {
+        if (!CodeUtil.checkVerifyCode(request)){
+            return new RestError("请填写正确的验证码!");
+        }
         TeamExecution execution = null;
-        try{
+        try {
             execution = teamService.addTeam(team);
             if (execution.getCount() != 1 && execution.getState() != 0) {
                 return new RestError(execution);
             }
-        }catch (OperationException e) {
+        } catch (OperationException e) {
             return new RestError(e.getMessage());
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             return new RestError(e.getMessage());
         }
         return new RestData(execution);

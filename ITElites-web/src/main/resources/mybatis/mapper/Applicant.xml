@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sicnu.itelites.dao.IApplicantDAO">
+    <cache eviction="FIFO" flushInterval="200"/>
+    <insert id="insertApplicant" useGeneratedKeys="true" keyColumn="applicant_id" keyProperty="applicantId">
+        INSERT INTO
+        tb_applicant (applicant_num,applicant_name,phone,qq,create_time,last_edit_time,team_one,team_two,team_reason)
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{applicantNum},#{applicantName},#{phone},#{qq},#{createTime},#{lastEditTime},#{teamOne.teamId},#{teamTwo.teamId},#{teamReason}
+        </trim>
+        ;
+    </insert>
+    <update id="updateApplicant" parameterType="cn.sicnu.itelites.entity.Applicant">
+        UPDATE tb_applicant
+        <set>
+            <if test="applicantNum != null">applicant_num=#{applicantNum},</if>
+            <if test="applicantName != null">applicant_name=#{applicantName},</if>
+            <if test="lastEditTime != null">last_edit_time=#{lastEditTime},</if>
+            <if test="qq != null">qq=#{qq},</if>
+            <if test="teamOne != null">team_one=#{teamOne.teamId},</if>
+            <if test="teamTwo != null">team_two=#{teamTwo.teamId},</if>
+            <if test="teamReason != null">team_reason=#{teamReason},</if>
+        </set>
+        WHERE applicant_id=#{applicantId};
+    </update>
+    <select id="queryApplicant" resultType="Applicant" parameterType="java.util.Map">
+        SELECT
+        applicant_id,applicant_num,applicant_name,phone,qq,create_time,last_edit_time,team_pass,team_one,team_two,team_reason,validate,group_pass,group_one,group_two,group_reason
+        FROM
+        tb_applicant
+        WHERE 1=1
+        <if test="applicantNum != null and applicantNum != &quot;&quot;">
+            and applicant_num=#{applicantNum}
+        </if>
+        <if test="applicantId != null and applicantId != &quot;&quot;">
+            and applicant_id=#{applicantId}
+        </if>
+        <if test="phone != null and phone != &quot;&quot;">
+            and phone=#{phone}
+        </if>
+        <if test="qq != null and qq != &quot;&quot;">
+            and qq=#{qq}
+        </if>
+        <if test="teamOne != null and teamOne != &quot;&quot;">
+            and team_one=#{teamOne.teamId}
+        </if>
+        <if test="teamTwo != null and teamTwo != &quot;&quot;">
+            and team_two=#{teamTwo.teamId}
+        </if>
+        <if test="teamPass != null and teamPass != &quot;&quot;">
+            and team_pass=#{teamPass.teamId}
+        </if>
+        <if test="groupOne != null and groupOne != &quot;&quot;">
+            and group_one=#{groupOne.groupId}
+        </if>
+        <if test="groupTwo != null and groupTwo != &quot;&quot;">
+            and group_two=#{groupTwo.groupId}
+        </if>
+        <if test="groupPass != null and groupPass != &quot;&quot;">
+            and group_pass=#{groupPass.groupId}
+        </if>
+        ;
+    </select>
+
+</mapper>

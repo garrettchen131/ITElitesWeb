@@ -6,6 +6,7 @@ import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.enums.TeamStateEnum;
 import cn.sicnu.itelites.exception.OperationException;
 import cn.sicnu.itelites.service.ITeamService;
+import cn.sicnu.itelites.view.RestError;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,9 @@ public class TeamServiceImpl implements ITeamService {
         if (team == null)
         {
             return new TeamExecution(TeamStateEnum.NULL_TEAM);
+        }
+        if (team.getTeamName() == null || "".equals(team.getTeamName())) {
+            return new TeamExecution(TeamStateEnum.INVALID_NAME);
         }
         //空值时在拦截器中进行拦截，业务不进行判断
         team.setCreateTime(new Date());

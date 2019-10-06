@@ -20,7 +20,7 @@ public class TeamDaoTest extends BaseTest {
     @Test
     public void testAdd() {
         Team team = new Team();
-        team.setTeamName("team1");
+        team.setTeamName("team2");
         team.setCreateTime(new Date());
         team.setLastEditTime(new Date());
         int effectedNum = teamDAO.insertTeam(team);

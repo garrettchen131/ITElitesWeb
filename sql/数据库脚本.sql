@@ -4,8 +4,8 @@ USE `itelites`;
 CREATE TABLE `tb_first_head`
 (
     `first_head_id` INT AUTO_INCREMENT  ,
-    `first_head_name` VARCHAR(20) NOT NULL UNIQUE ,
-    `first_head_url` varchar (30) DEFAULT NULL,
+    `first_head_name` VARCHAR(16) NOT NULL UNIQUE ,
+    `first_head_url` varchar (16) DEFAULT NULL,
     `create_time` DATETIME DEFAULT NULL,
     `valid` SMALLINT DEFAULT 1 ,
     `priority` INT NOT NULL UNIQUE ,
@@ -15,8 +15,8 @@ CREATE TABLE `tb_first_head`
 CREATE TABLE `tb_second_head`
 (
     `second_head_id` INT AUTO_INCREMENT  ,
-    `second_head_name` VARCHAR(20) NOT NULL UNIQUE ,
-    `second_head_url` varchar (30) DEFAULT NULL,
+    `second_head_name` VARCHAR(16) NOT NULL UNIQUE ,
+    `second_head_url` varchar (16) DEFAULT NULL,
     `first_head_id` INT ,
     `create_time` DATETIME DEFAULT NULL,
     `valid` SMALLINT DEFAULT 1 ,
@@ -27,7 +27,7 @@ CREATE TABLE `tb_second_head`
 
 CREATE TABLE `tb_team`(
     `team_id` INT AUTO_INCREMENT,
-    `team_name` VARCHAR(20) NOT NULL UNIQUE,
+    `team_name` VARCHAR(16) NOT NULL UNIQUE,
     `create_time` DATETIME DEFAULT NULL,
     `last_edit_time` DATETIME DEFAULT NULL,
     `team_desc` VARCHAR(1024) DEFAULT NULL,
@@ -46,20 +46,24 @@ CREATE TABLE `tb_group`(
     CONSTRAINT `pk_group_team` FOREIGN KEY(`team_id`) REFERENCES `tb_team`(`team_id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `tb_stu_register`(
-    `student_id` INT AUTO_INCREMENT,
-    `student_num` BIGINT NOT NULL UNIQUE ,
-    `student_name` varchar(16) NOT NULL,
-    `phone` VARCHAR (128) DEFAULT NULL,
-    `qq` varchar (16) DEFAULT NULL ,
+CREATE TABLE `tb_applicant`(
+    `applicant_id` INT AUTO_INCREMENT,
+    `applicant_num` BIGINT NOT NULL UNIQUE ,
+    `applicant_name` varchar(16) NOT NULL,
+    `phone` VARCHAR (11) NOT NULL UNIQUE ,
+    `qq` varchar (11) NOT NULL UNIQUE,
+    `create_time` DATETIME DEFAULT NULL ,
+    `last_edit_time` DATETIME DEFAULT NULL,
     `team_pass` INT DEFAULT NULL ,
     `team_one` INT NOT NULL,
-    `team_two` INT NOT NULL,
+    `team_two` INT DEFAULT NULL ,
+    `team_reason` VARCHAR(1024) DEFAULT NULL ,
     `validate` INT NOT NULL DEFAULT 0 COMMENT '1表示当前可以选择小组，0表示大组考核中，-1表示不通过',
     `group_pass` INT DEFAULT NULL ,
     `group_one` INT DEFAULT NULL ,
     `group_two` INT DEFAULT NULL ,
-    PRIMARY KEY(`student_id`),
+    `group_reason` VARCHAR(1024) DEFAULT NULL ,
+    PRIMARY KEY(`applicant_id`),
     CONSTRAINT `pk_stu_teamone` FOREIGN KEY(`team_one`) REFERENCES `tb_team`(`team_id`),
     CONSTRAINT `pk_stu_teamtwo` FOREIGN KEY(`team_two`) REFERENCES `tb_team`(`team_id`),
     CONSTRAINT `pk_stu_teampass` FOREIGN KEY(`team_pass`) REFERENCES `tb_team`(`team_id`),
@@ -70,7 +74,7 @@ CREATE TABLE `tb_stu_register`(
 
 CREATE TABLE `tb_exhibition`(
     `exhibition_id` INT AUTO_INCREMENT,
-    `exhibition_name` VARCHAR(50) NOT NULL UNIQUE,
+    `exhibition_name` VARCHAR(24) NOT NULL UNIQUE,
     `create_time` DATETIME DEFAULT NULL,
     `last_edit_time` DATETIME DEFAULT NULL,
     `exhibition_img` VARCHAR(1024) DEFAULT NULL,

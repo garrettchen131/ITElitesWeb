@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
-public class RestError implements View {
-
-    private int error = -1;
-    private String reason = "";
+public class RestError extends RestView{
 
     public RestError() {
     }
 
     public RestError(int error) {
         this.error = error;
+        this.reason = "not know error";
     }
 
     public RestError(String reason) {
+        this.error = -1;
         this.reason = reason;
     }
 

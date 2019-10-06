@@ -1,23 +1,24 @@
 package cn.sicnu.itelites.enums;
 
-public enum GroupStateEnum {
+public enum MsgCodeStateEnum {
 
-    ADD_SUCCESS(0, "添加成功"), ADD_FAIL(-1, "添加失败"), NULL_GROUP(404, "空值"),
-    CHANGE_SUCCESS(0, "修改成功"), CHANGE_FAIL(-2, "修改失败"),GET_SUCCESS(0, "查询成功"),
-    NULL_TEAM_ID(-3, "大组空值"), NULL_TEAM(-5, "无此大组"),INVALID_ID(-5,"无效的ID"),
-    INVALID_NAME(-5,"无效的NAME")
+    INVALID_CODE(-1,"无效的验证码"), WRONG_CODE(-2,"错误的验证码"),
+    CREATE_SUCCESS(0, "创建成功"), CREATE_FAIL(1, "创建失败"),
+    CHECK_SUCCESS(0, "验证成功"), GET_CODE(-5,"请先获取验证码"),
+    CHECK_FAIL(-10,"验证失败")
     ;
+
 
     private int state;
     private String stateInfo;
 
-    private GroupStateEnum(int state, String stateInfo) {
+    private MsgCodeStateEnum(int state, String stateInfo) {
         this.state = state;
         this.stateInfo = stateInfo;
     }
 
-    public static GroupStateEnum stateOf(int state) {
-        for (GroupStateEnum stateEnum : values()) {
+    public static MsgCodeStateEnum stateOf(int state) {
+        for (MsgCodeStateEnum stateEnum : values()) {
             if (stateEnum.state == state) {
                 return stateEnum;
             }

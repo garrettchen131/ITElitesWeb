@@ -28,7 +28,7 @@ public class GroupServiceImpl implements IGroupService {
         if (group.getTeamId() == null || group.getTeamId() < 1) {
             return new GroupExecution(GroupStateEnum.NULL_TEAM_ID);
         }
-        //TODO 这里还需要判断该teamId在表中是否存在！
+        //TODO 这里还需要判断该teamId在表中是否存在！（已在controller中使用多个Service层实现，后续待考虑）
         group.setCreateTime(new Date());
         group.setLastEditTime(new Date());
         try{
