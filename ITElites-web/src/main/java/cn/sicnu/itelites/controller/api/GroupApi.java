@@ -6,6 +6,7 @@ import cn.sicnu.itelites.exception.OperationException;
 import cn.sicnu.itelites.service.IGroupService;
 import cn.sicnu.itelites.service.ITeamService;
 import cn.sicnu.itelites.util.CodeUtil;
+import cn.sicnu.itelites.util.GenerateUtil;
 import cn.sicnu.itelites.view.RestData;
 import cn.sicnu.itelites.view.RestError;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.View;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/group")
@@ -31,7 +34,21 @@ public class GroupApi {
     }
 
     @PostMapping("/add.do")
-    private View addGroup(@RequestBody Group group, HttpServletRequest request){
+    private View addGroup(@RequestBody Map<String,String> params, HttpServletRequest request){
+
+        Group group = null;
+        try {
+            group = GenerateUtil.GenerateClass(params,Group.class);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+
         if (!CodeUtil.checkVerifyCode(request)){
             return new RestError("请填写正确的验证码!");
         }

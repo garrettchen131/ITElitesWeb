@@ -6,6 +6,7 @@ import cn.sicnu.itelites.entity.Team;
 import cn.sicnu.itelites.exception.OperationException;
 import cn.sicnu.itelites.service.ITeamService;
 import cn.sicnu.itelites.util.CodeUtil;
+import cn.sicnu.itelites.util.GenerateUtil;
 import cn.sicnu.itelites.view.RestData;
 import cn.sicnu.itelites.view.RestError;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.View;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/team")
@@ -30,10 +33,24 @@ public class TeamApi {
     }
 
     @PostMapping("/add.do")
-    private View addTeam(@RequestBody Team team, HttpServletRequest request) {
+    private View addTeam(@RequestBody Map<String,String> params, HttpServletRequest request) {
         if (!CodeUtil.checkVerifyCode(request)){
             return new RestError("请填写正确的验证码!");
         }
+
+        Team team = null;
+        try {
+            team = GenerateUtil.GenerateClass(params,Team.class);
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+
         TeamExecution execution = null;
         try {
             execution = teamService.addTeam(team);

@@ -9,7 +9,9 @@ import java.util.Map;
 public class GenerateUtil {
 
 
-    public static <T> T GenerateClass(Map<String, String> params, Class<T> clazz) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+    public static <T> T GenerateClass(Map<String, String> params, Class<T> clazz)
+            throws NoSuchMethodException, IllegalAccessException, InvocationTargetException,
+            InstantiationException {
         Field[] fields = clazz.getDeclaredFields();
         Object obj = clazz.getConstructor().newInstance();
         for (Field field : fields) {
