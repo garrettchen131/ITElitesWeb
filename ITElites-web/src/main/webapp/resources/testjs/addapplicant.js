@@ -1,8 +1,8 @@
 
 $(function () {
-    var addApplicantUrl = '/applicant/add.do';
-    var getTeamUrl = '/team/get.do';
-    var teamHtml = '';
+    var addApplicantUrl = '/applicant/add.do'; //提交表单的接口
+    var getTeamUrl = '/team/get.do'; //获取大组的接口
+    var teamHtml = '';  //填充大组的html
     $.ajax({
         url: getTeamUrl,
         type: "GET",
@@ -38,7 +38,7 @@ $(function () {
             return !this.selected;
         }).attr('data-id');
 
-        //TODO 做一下前端验证
+        //TODO 做一下前端常规验证
 
         console.log(JSON.stringify(applicant));
         $.ajax({
