@@ -20,5 +20,18 @@
         <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".html"/>
     </bean>
+    
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/applicant/add.do"/>
+            <mvc:mapping path="/team/add.do"/>
+            <mvc:mapping path="/group/add.do"/>
+            <bean class="cn.sicnu.itelites.interceptor.VerifyCodeInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
+    <mvc:resources mapping="/js/**" location="/resources/js/"/>
+    <mvc:resources mapping="/css/**" location="/resources/css/"/>
+    <mvc:resources mapping="/img/**" location="/resources/img/"/>
+    <mvc:resources mapping="/link/**" location="/resources/link/"/>
 </beans>

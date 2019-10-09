@@ -30,12 +30,14 @@ public class TeamServiceImpl implements ITeamService {
         team.setCreateTime(new Date());
         team.setLastEditTime(new Date());
         int effectNum;
-        try{
+        try {
             effectNum = teamDAO.insertTeam(team);
-            if (effectNum <= 0) throw new OperationException(TeamStateEnum.ADD_FAIL.getState(),TeamStateEnum.ADD_FAIL.getStateInfo());   // TODO 这里是抛异常好还是返回对应的状态好？？？
-        }catch (RuntimeException e)
-        {
+            if (effectNum <= 0)
+                throw new OperationException(TeamStateEnum.ADD_FAIL.getState(), TeamStateEnum.ADD_FAIL.getStateInfo());   // TODO 这里是抛异常好还是返回对应的状态好？？？
+        } catch (RuntimeException e) {
             throw e;
+        } catch (Exception e) {
+            throw new RuntimeException();
         }
         return new TeamExecution(TeamStateEnum.ADD_SUCCESS,team);
     }

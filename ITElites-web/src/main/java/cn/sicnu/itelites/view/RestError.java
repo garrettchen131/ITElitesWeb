@@ -43,6 +43,7 @@ public class RestError extends RestView{
     }
 
     public RestError(RuntimeException e) {
+        this.error = -1;
         this.reason = e.getMessage();
         if(this.reason == null)
             this.reason = e.getClass().getName();

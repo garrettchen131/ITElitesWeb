@@ -6,6 +6,7 @@ import cn.sicnu.itelites.entity.Team;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -34,7 +35,12 @@ public class ApplicantDaoTest extends BaseTest {
         applicant.setTeamOne(teamtwo);
         applicant.setTeamTwo(teamone);
 
-        int effectiveNum = applicantDAO.insertApplicant(applicant);
+        int effectiveNum = 0;
+        try {
+            effectiveNum = applicantDAO.insertApplicant(applicant);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
         assertEquals(effectiveNum,1);
     }

@@ -26,4 +26,13 @@
         <property name="maxPoolPreparedStatementPerConnectionSize" value="${db.druid.maxPoolPreparedStatementPerConnectionSize}" />
         <property name="filters" value="${db.druid.filters}" /> <!-- 配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙 -->
     </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="basenames">
+            <array>
+                <value>validation</value>
+            </array>
+        </property>
+    </bean>
 </beans>

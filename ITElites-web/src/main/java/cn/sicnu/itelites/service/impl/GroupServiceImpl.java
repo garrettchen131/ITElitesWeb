@@ -61,6 +61,8 @@ public class GroupServiceImpl implements IGroupService {
             }
         }catch (RuntimeException e){
             throw e;
+        }catch (Exception e){
+            throw new RuntimeException();
         }
         return new GroupExecution(GroupStateEnum.CHANGE_SUCCESS,group);
     }

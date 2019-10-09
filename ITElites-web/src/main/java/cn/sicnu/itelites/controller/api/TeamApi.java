@@ -34,21 +34,12 @@ public class TeamApi {
 
     @PostMapping("/add.do")
     private View addTeam(@RequestBody Map<String,String> params, HttpServletRequest request) {
-        if (!CodeUtil.checkVerifyCode(request)){
-            return new RestError("请填写正确的验证码!");
-        }
 
         Team team = null;
         try {
             team = GenerateUtil.GenerateClass(params,Team.class);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            return new RestError("未知的出错原因!"); //此处进行验证过后不会出错
         }
 
         TeamExecution execution = null;

@@ -1,18 +1,33 @@
 package cn.sicnu.itelites.entity;
 
+import cn.sicnu.itelites.Annotation.ValidationFlied;
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class Applicant implements Serializable {
+    @ValidationFlied(key = "Applicant.applicantId")
     private Integer applicantId;  //数据库自动生成的学生ID主键
+
+    @ValidationFlied(notNull = true,key = "Applicant.applicantNum")
     private Long applicantNum;    //学号
+
+    @ValidationFlied(notNull = true,key = "Applicant.applicantName")
     private String applicantName; //学生姓名
+
+    @ValidationFlied(notNull = true,key = "Applicant.phone")
     private String phone;       //电话号码
+
+    @ValidationFlied(notNull = true,key = "Applicant.qq")
     private String qq;          //学生QQ
     private Date createTime;    //创建时间
     private Date lastEditTime;  //最后修改时间
     private Team teamPass;      //通过的大组
+
+    @ValidationFlied(notNull = true,key = "Applicant.teamOne")
     private Team teamOne;       //大组第一志愿
+
+    @ValidationFlied(notNull = true,key = "Applicant.teamTwo")
     private Team teamTwo;       //大组第二志愿
     private String teamReason;  //填写加入IT培优的感受
     private Integer validate;   //当前状态（-1、未通过，0、等待中，1、通过）

@@ -39,19 +39,10 @@ public class GroupApi {
         Group group = null;
         try {
             group = GenerateUtil.GenerateClass(params,Group.class);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            return new RestError("未知的出错原因!"); //此处进行验证过后不会出错
         }
 
-        if (!CodeUtil.checkVerifyCode(request)){
-            return new RestError("请填写正确的验证码!");
-        }
         if (group.getTeamId() == null){
             return new RestError("请选择需要添加的大组");
         }

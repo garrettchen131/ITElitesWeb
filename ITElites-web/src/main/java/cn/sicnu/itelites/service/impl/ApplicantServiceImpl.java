@@ -6,9 +6,12 @@ import cn.sicnu.itelites.entity.Applicant;
 import cn.sicnu.itelites.enums.ApplicantStateEnum;
 import cn.sicnu.itelites.exception.OperationException;
 import cn.sicnu.itelites.service.IApplicantService;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 @Service
@@ -18,7 +21,7 @@ public class ApplicantServiceImpl implements IApplicantService {
     private IApplicantDAO applicantDAO;
 
     @Override
-    public ApplicantExecution addApplicant(Applicant applicant) throws OperationException {
+    public ApplicantExecution addApplicant(Applicant applicant) throws OperationException, DataAccessException {
         if (applicant == null) {
             return new ApplicantExecution(ApplicantStateEnum.NULL_APPLICANT);
         }
@@ -35,8 +38,12 @@ public class ApplicantServiceImpl implements IApplicantService {
         try {
             int effective = applicantDAO.insertApplicant(applicant);
             if (effective < 1) throw new OperationException(-1, "添加失败");
-        } catch (RuntimeException e) {
+        }catch (RuntimeException e) {
             throw e;
+        }catch (MySQLIntegrityConstraintViolationException e){
+            throw new OperationException(-1, "添加失败,出现重复数据,请检查后填写");
+        } catch (SQLException e){
+            throw new OperationException(-1, "添加失败");
         }
         return new ApplicantExecution(ApplicantStateEnum.ADD_SUCCESS, applicant);
     }
