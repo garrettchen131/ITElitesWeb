@@ -2,7 +2,7 @@
 ===========================
 ```
 前端使用BootStrap+vue
-后台使用SSM+Mybatis
+后台使用SSM
 ```
 <p>Stay Hungry, Stay Foolish</p>
 <p>一群人，一个家，一件事，一个梦</p>
