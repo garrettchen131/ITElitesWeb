@@ -1,0 +1,27 @@
+{
+    "error": 0,
+    "reason": "OK",
+    "data": [
+        {
+            "teamName": "team1",
+            "createTime": 1570089584000,
+            "teamId": 1,
+            "teamDesc": "NODesc",
+            "lastEditTime": 1570089584000
+        },
+        {
+            "teamName": "team2",
+            "createTime": 1570089595000,
+            "teamId": 2,
+            "teamDesc": "NODesc",
+            "lastEditTime": 1570089595000
+        },
+        {
+            "teamName": "team3",
+            "createTime": 1570432639000,
+            "teamId": 3,
+            "teamDesc": "team3desc",
+            "lastEditTime": 1570432639000
+        }
+    ]
+}

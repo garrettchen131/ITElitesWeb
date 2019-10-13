@@ -1,205 +1,439 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="../css/main.css" />
-		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> <!-- 粒子官方css效果 -->
-		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script src="js/jquery.particleground.js"></script>
-		<script src="js/jquery.particleground.min.js"></script>
-	</head>
-	<body>
-		<div class="groundImg"></div>
-		<div class="titleBox">
-			<p class="mainTitle">欢迎加入IT培优</p>
-			<p class="subsidiaryTitle">★我们的征途是星辰大海★</p>
-		</div>
-		<div class="introduce">
-			<div id="particlesblock">
-				<div id="particles">
-					<div id="intro"></div>
-				</div>
-			</div>
-			
-			<div id="introContent">
-				<p class="boxTitle">—— 小组介绍 ——</p>
-				<div class="animate">
-					<div class="animateBox animateBox1">
-						<p>编程</p>
-						<p>9</p>
-					</div>
-					<img src="img/add.png" alt="" class="add">
-					<div class="animateBox animateBox2">
-						<p>美工</p>
-						<p>2</p>
-					</div>
-					<img src="img/add.png" alt="" class="add">
-					<div class="animateBox animateBox3">
-						<p>产品</p>
-						<p>1</p>
-					</div>
-					<img src="img/add.png" alt="" class="add">
-					<div class="animateBox animateBox4">
-						<p>教技</p>
-						<p>1</p>
-					</div>
-					<img src="img/add.png" alt="" class="add">
-					<div class="animateBox animateBox5">
-						<p>新媒体</p>
-						<p>1</p>
-					</div>
-					<img src="img/equal.png" alt="" class="equal">
-					<div class="animateBox animateBox6">
-						<p>我们</p>
-						<p>us</p>
-					</div>
-				</div>
-				<p class="mainName">- 编程组 -</p>
-				<div class="programming">
-					<div class="teamBox">
-						<p class="teamName">● ACM组</p>
-						<p class="teamText">该组以算法为核心，致力参加各类算法竞赛，提高创新能力、团队精神和在压力下编写程序、分析和解决问题能力。主要使用c/c++进行编程，利用好的算法提升自己的编程能力。该组知识与软件工程、计算机科学与技术、网络工程专业联系较为紧密，欢迎喜欢研究算法，喜欢参加竞赛的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● 嵌入式组</p>
-					<p class="teamText">该组主要对嵌入式系统进行学习与研究，集软件与硬件与一体，同时拥有软件和硬件的特点，如C语言，汇编语言，数据结构，模拟电路，数字电路，单片机等。通过参与智能小车，机器人，飞行器等实际操作作为技能提升练习，并能够主动参与一些嵌入式赛事来提升自我能力。该组知识与计算机科学与技术专业联系较为紧密，欢迎喜欢硬件，喜欢着手将自己的想法变为现实，对嵌入式感兴趣的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● 信息安全组</p>
-					<p class="teamText">该组主要研究现代化信息与网络的安全问题，包含网站安全、网络安全、主机安全、数据库安全等，学习内容涉及计算机科学、网络技术、通信技术、密码技术、信息安全技术、数论、心理学等多种学科。学习分为渗透、编程、逆向三个方向。该组知识与网络工程、计算机科学与技术、软件工程专业联系较为紧密，欢迎喜欢研究信息安全的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● Web前端组</p>
-					<p class="teamText">该组主要学习目标是进行客户端、移动端等方向的前端开发和相应网页开发语言如HTML、CSS、JavaScript、node.js的学习。内容涉及网站、APP页面的实现与优化，以及熟练运用框架辅助开发，同时需了解Web服务器和前后端交互相关知识。该组知识与网络工程、软件工程、计算机科学与技术专业联系较为紧密，欢迎对前端开发感兴趣的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● Swift组</p>
-					<p class="teamText">该组以苹果平台为基础，学习iphone、ipad、itouch和imac等IOS移动终端的应用和游戏开发。通过object-c、Swift编程语言设计更加有针对性、画面感更强的游戏。该组知识与软件工程、计算机科学与技术、网络工程专业联系较为紧密，欢迎对IOS操作系统感兴趣的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● C#组</p>
-					<p class="teamText">该组以微软公司C#编程语言为核心，主要研究方向是各类管理系统和服务平台的开发，也在程序开发，游戏编写方面有研究。asp.net开发，C#编程基础，Visual Studio使用都是本组必修课。本组与计算机科学与技术，软件工程，网络工程专业联系较多，欢迎热爱C#编程的同学加入。</p>
-					</div>
-					<div class="teamBox">
-					<p class="teamName">● Java组</p>
-					<p class="teamText">该组内部有两个方向，分别是Android方向和Java Web方向。Java组以Java语言为基础，学习安卓平台上的应用游戏开发。通过xml灵活地设计UI，使得UI更加优越，通过JAVA更加简便地设计应用功能，使得功能更加强大。同时eclipse和android studio是该组必要工具。该组知识与软件工程、网络工程、计算机科学与技术联系较多，欢迎热爱Java编程，热爱安卓开发的同学加入。</p>
-					</div>
-					<div class="teamBox">	
-					<p class="teamName">● C++组</p>
-					<p class="teamText">该组运用C++进行应用程序开发，C++在游戏、科学计算、网络软件、分布式应用等方面都有着广泛用途，该组知识与软件工程、网络工程、计算机科学与技术专业联系较为紧密，欢迎有兴趣学习C++的小伙伴加入。</p>
-					</div>
-					<div class="teamBox">	
-					<p class="teamName">● Python组</p>
-					<p class="teamText">该组主要学习Python并运用到各个方面，如爬虫、编写脚本、机器学习、大数据等，同时Python在人工智能方面也有广泛运用，该组知识与网络工程、软件工程、计算机科学与技术专业联系较为紧密，欢迎想要深入了解的同学加入。</p>		
-					</div>
-				</div>
-				
-				<p class="mainName">- 美工组 -</p>
-				<div class="art">
-					<div class="teamBox2">
-					<p class="teamName">● 平面设计组</p>
-					<p class="teamText">学会给图片加上一些特效，同时会以设计海报、宣传单、网站设计等为主要练习对象，后期设计UI（如手机软件界面）、VI（包括海报、书籍装帧、名片等）设计。当前阶段主要使用工具软件有Photoshop，学习软件的目的是让成员能够熟练掌握软件基本的操作和各种工具的使用，并能够使用软件做简单的图像处理。平面设计小组与编程组会有较多的合作，同时与视频组也会有密切的联系。欢迎喜欢修图、想要学习设计的同学加入。</p>
-					</div>
-					<div class="teamBox2">
-					<p class="teamName">● 影视编辑组</p>
-					<p class="teamText">以创新为主，学习前期（相机和摄像机的使用和拍摄手法）和后期（PR、AE、MAYA的使用方法和技巧），该组与教育技术专业联系较多，同时欢迎热爱影视编辑的同学加入。</p>
-					</div>
-				</div>
-				<div class="product">
-					<p class="mainName">- 产品组 -</p>
-					<p class="teamText2">我们致力于增强同学们对产品的了解，通过进行产品逻辑思维训练，学习使用xmind，幕布，axure等工具，掌握市场营销等产品相关的基础知识，并融入通用性的职场知识技能，为就业之时提供帮助，培养出一批又一批产品领域的英才，期待感兴趣的同学加入。</p>
-				</div>
-				<div class="education">
-					<p class="mainName">- 教师技能组 -</p>
-					<p class="teamText2">我们旨在锤炼同学们教育技术专业能力，提升同学们的课堂教学能力及技术支撑或融合教学的能力，并给同学们能力的锻炼与展示提供合适的平台。本组主要从教师课堂教学能力；“三笔一画”能力；技术支撑或融合教学的能力；教学论文撰写能力等四个基础能力对学生进行培养。本组以信息技术教师的基本能力为核心培训方向，通过摄影、动画制作、音频处理、等方式，并运用PS、CorelDraw、PR、AE等软件进行教学视频的编辑与制作。我们欢迎有志于利用技术让教育更美好的同学加入我们小组。</p>
-				</div>
-				<div class="newMedia">
-					<p class="mainName">- 新媒体教育组 -</p>
-					<p class="teamText2">该组是基于四川师范大学教育技术学专业师生运营的一个微信公众平台，以 “技术变革教育”为宗旨，通过传播分享信息化教育中的工具、技术、资源、思维等内容，以促进教师职后碎片化学习和提升四川师范大学教育技术学专业影响力为目的的新媒体运营小组。小组由周雄俊副教授担任指导老师，现有成员16人，其中研究生2人，本科生14人。截至2018年11月2日，平台关注量已达到2.3万人，用户覆盖全国31个省级行政区域，其中80%为中小学在职教师，平台历史累计推送原创文章150篇。该平台已成为有一定影响力的在职教师职后学习、在校师范生综合素养拓展的新媒体学习交流平台。欢迎同学们的加入。</p>
-				</div>
-			</div>
-			
-		</div>
-		<div class="signUpBox">
-			<p class="signUpBoxTitle">Now , join us</p>
-		</div>
-		<div class="signUp">
-			<div id="signUpContent">
-				<p class="boxTitle">—— 报名信息填写 ——</p>
-				<div class="signUpTitle">
-					<div class="largeGroup">大组报名</div>
-					<div class="interval"></div>
-					<div class="group">小组报名</div>
-				</div>
-				<div class="signUpInformation">
-					<!--<form name="myform" action="index.html" method="POST">-->
-						<div class="informationName">
-							<span class="nameText">姓名</span>
-							<input class="nameInput" name="name" type="text">
-							<p class="namePrompt">请输入您的姓名</p>
-						</div>
-						<div class="informationId">
-							<span class="idText">学号</span>
-							<input class="idInput" name="id" type="text">
-							<p class="idPrompt">请输入您的学号</p><!--判断正确格式学号-->
-						</div>
-						<div class="informationTelephone">
-							<span class="telephoneText">电话号码</span>
-							<input class="telephoneInput" name="telephone" type="text">
-							<p class="telephonePrompt">请输入您的电话号码</p><!--判断正确格式电话号码-->
-						</div>
-						<div class="informationQQ">
-							<span class="QQText">QQ</span>
-							<input class="QQInput" name="QQ" type="text">
-							<p class="QQPrompt">请输入您的QQ</p><!--判断正确格式QQ-->
-						</div>
-						<div class="informationFirstChoice">
-							<span class="firstChoiceText">第一志愿</span>
-							<select class="firstChoiceInput" id="firstChoice">
-								<!--
-									<option value="s0"></option>
-									<option value="编程组">编程组</option>
-									<option value="美工组">美工组</option>
-									<option value="产品组">产品组</option>
-									<option value="教师技能组">教师技能组</option>
-									<option value="新媒体组">新媒体组</option>
-								-->
-							</select>
-							<p class="firstChoicePrompt">请填写您的第一志愿</p>
-						</div>
-						<div class="informationSecondChoice">
-							<span class="secondChoiceText">第二志愿</span>
-							<select class="secondChoiceInput" id="secondChoice">
-								<!--
-									<option value="s0"></option>
-									<option value="编程组">编程组</option>
-									<option value="美工组">美工组</option>
-									<option value="产品组">产品组</option>
-									<option value="教师技能组">教师技能组</option>
-									<option value="新媒体组">新媒体组</option>
-								-->
-							</select>
-							<p class="secondChoicePrompt">请填写您的第二志愿</p>
-						</div>
-						<div class="informationVerificationCode">
-							<span class="verificationCodeText">验证码</span>
-							<input class="verificationCodeInput" id="j_captcha" name="verificationCode" type="text">
-							<div class="verificationCodeBox">
-							    <img id="captcha_img" alt="点击更换" title="点击更换" onclick="changeVerifyCode(this)" src="../Kaptcha" />
-							</div>
-							<p class="verificationCodePrompt">请输入正确的验证码</p>
-						</div>
-						<div class="informationSubmit" id="submit">
-								<div class="submitText">提交信息</div>
-						</div>
-					<!--</form>-->
-				</div>
-			</div>
-			
-		</div>
-		
-		
-		<script src="js/main.js"></script>
-	</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>IT培优报名</title>
+    <link rel="icon" href="/resources/static/favicon.ico" />
+    <link rel="stylesheet" href="/resources/css/join.css" />
+    <script src="/resources/link/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  </head>
+  <style>
+    
+  </style>
+  <body style="padding-top: 0.02px;">
+    <div class="titleBlock">
+      <div class="bgImg"></div>
+      <div class="shadow">
+        <h1>欢 迎 加 入 I T 培 优</h1>
+      </div>
+    </div>
+    <div class="sidebar">
+
+    </div>
+    <div class="about">
+      <p class="aboutTitle">关于我们</p>
+      <div class="aboutTitleBorder" id="aboutTitleBorder"></div>
+      <div class="aboutContent">
+        <div class="TeamBlock">
+            <div class="Team">
+              <div class="teamContent">
+                <div class="teamIcon">
+                  <img src="/resources/static/about1.png" alt="">
+                </div>
+                <div class="teamTitle">编程组</div>
+              </div>
+            </div>
+            <div class="Team">
+                <div class="teamContent">
+                  <div class="teamIcon">
+                    <img src="/resources/static/about2.png" alt="">
+                  </div>
+                  <div class="teamTitle">美工组</div>
+                </div>
+            </div>
+            <div class="Team">
+                <div class="teamContent">
+                  <div class="teamIcon">
+                    <img src="/resources/static/about3.png" alt="">
+                  </div>
+                    <div class="teamTitle">产品组</div>
+                </div>
+            </div>
+            <div class="Team">
+                <div class="teamContent">
+                  <div class="teamIcon">
+                    <img src="/resources/static/about4.png" alt="">
+                  </div>
+                    <div class="teamTitle">教师技能组</div>
+                </div>
+            </div>
+            <div class="Team">
+                <div class="teamContent">
+                  <div class="teamIcon">
+                    <img src="/resources/static/about5.png" alt="">
+                  </div>
+                    <div class="teamTitle">新媒体组</div>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="teamIntro">
+        <div class="split">
+          <img src="/resources/static/intro.png" alt="">
+          <div class="splitLine"></div>
+        </div>
+        <div class="biancheng">
+          <div class="introTitleBlock"></div>
+          <p class="introTitle">编 程 组</p>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">ACM 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/ACM.jpeg" alt=""></div> 
+              <div class="groupintro">
+                <p>该组以算法为核心，致力参加各类算法竞赛，提高创新能力、团队精神和在压力下编写程序、
+                分析和解决问题能力。主要使用c/c++进行编程，利用好的算法提升自己的编程能力。该组知识与软件工程、计算机科学
+                与技术、网络工程专业联系较为紧密，欢迎喜欢研究算法，喜欢参加竞赛的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">嵌入式 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/qianRushi.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组主要对嵌入式系统进行学习与研究，集软件与硬件与一体，同时拥有软件和硬件的特点，
+                如C语言，汇编语言，数据结构，模拟电路，数字电路，单片机等。通过参与智能小车，机器人，飞行器等实际操作作为
+                技能提升练习，并能够主动参与一些嵌入式赛事来提升自我能力。该组知识与计算机科学与技术专业联系较为紧密，欢迎
+                喜欢硬件，喜欢着手将自己的想法变为现实，对嵌入式感兴趣的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">信息安全 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/xinan.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组主要研究现代化信息与网络的安全问题，包含网站安全、网络安全、主机安全、数据库安全
+                等，学习内容涉及计算机科学、网络技术、通信技术、密码技术、信息安全技术、数论、心理学等多种学科。学习分为
+                渗透，逆向，pwn，密码学这四个方向。该组知识与网络工程、计算机科学与技术、软件工程专业联系较为紧密，欢迎喜欢研究信息安全的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">Web前端 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/web.JPG" alt=""></div>
+              <div class="groupintro">
+                <p>该组主要学习目标是进行客户端、移动端等方向的前端开发和相应网页开发语言如HTML、CSS、
+                JavaScript、node.js的学习。内容涉及网站、APP页面的实现与优化，以及熟练运用框架辅助开发，同时需了解Web服务器和
+                前后端交互相关知识。该组知识与网络工程、软件工程、计算机科学与技术专业联系较为紧密，欢迎对前端开发感兴趣的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">Java 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/JAVA.jpeg" alt=""></div>
+              <div class="groupintro">
+                <p>该组以目前最流行的Java语言为基础，内部分为是Android和Java Web。Android方向，在Android Studio上开发
+                  Android的应用程序，可实现QQ、微信等APP的界面、功能，同时也能深入理解你的手机内存、结构等多方面的知识；Java Web
+                  方向，在IntelliJ IDEA 上开发网站后台程序，完整的Web程序可开发淘宝，京东等等各大网站及系统，非常实用和流行。欢迎入坑JAVA！
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">C# 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/cSharp.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组以微软公司C#编程语言为核心，主要研究方向是各类管理系统和服务平台的开发，也在程序开发，
+                游戏编写方面有研究。asp.net开发，C#编程基础，Visual Studio使用都是本组必修课。本组与计算机科学与技术，软件工程，
+                网络工程专业联系较多，欢迎热爱C#编程的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">Swift 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/IOS.JPG" alt=""></div>
+              <div class="groupintro">
+                <p>该组以苹果平台为基础，学习iphone、ipad、itouch和imac等IOS移动终端的应用和游戏开发。
+                通过object-c、Swift编程语言设计更加有针对性、画面感更强的游戏。该组知识与软件工程、计算机科学与技术、网络工程
+                专业联系较为紧密，欢迎对IOS操作系统感兴趣的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">C++ 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/joinus.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组运用C++进行应用程序开发，C++在游戏、科学计算、网络软件、分布式应用等方面都有着广泛用途，
+                该组知识与软件工程、网络工程、计算机科学与技术专业联系较为紧密，欢迎有兴趣学习C++的小伙伴加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">Python 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/joinus.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组主要学习Python并运用到各个方面，如爬虫、编写脚本、机器学习、大数据等，同时Python在人工
+                智能方面也有广泛运用，该组知识与网络工程、软件工程、计算机科学与技术专业联系较为紧密，欢迎想要深入了解的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split">
+          <img src="/resources/static/intro.png" alt="">
+          <div class="splitLine"></div>
+        </div>
+        <div class="meigong">
+          <div class="introTitleBlock"></div>
+          <p class="introTitle" id="introTitle_MG">美 工 组</p>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">平面设计 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/pinmian.JPG" alt=""></div>
+              <div class="groupintro">
+                <p>学会给图片加上一些特效，同时会以设计海报、宣传单、网站设计等为主要练习对象，后期设计UI
+                （如手机软件界面）、VI（包括海报、书籍装帧、名片等）设计。当前阶段主要使用工具软件有Photoshop，学习软件的目的
+                是让成员能够熟练掌握软件基本的操作和各种工具的使用，并能够使用软件做简单的图像处理。平面设计小组与编程组会有较
+                多的合作，同时与视频组也会有密切的联系。欢迎喜欢修图、想要学习设计的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupName">影视编辑 组</div>&nbsp;
+              <div class="groupPhoto"><img src="/resources/static/groupImg/shipin.JPG" alt=""></div>
+              <div class="groupintro">
+                <p>以创新为主，学习前期（相机和摄像机的使用和拍摄手法）和后期（PR、AE、MAYA的使用方法和技巧），
+                该组与教育技术专业联系较多，同时欢迎热爱影视编辑的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split">
+          <img src="/resources/static/intro.png" alt="">
+          <div class="splitLine"></div>
+        </div>
+        <div class="chanpin">
+          <div class="introTitleBlock"></div>
+          <p class="introTitle">产 品 组</p>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupPhoto"><img src="/resources/static/groupImg/chanpin.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>我们致力于增强同学们对产品的了解，通过进行产品逻辑思维训练，学习使用xmind，幕布，
+                axure等工具，掌握市场营销等产品相关的基础知识，并融入通用性的职场知识技能，为就业之时提供帮助，培养出一批
+                又一批产品领域的英才，期待感兴趣的同学加入。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split">
+          <img src="/resources/static/intro.png" alt="">
+          <div class="splitLine"></div>
+        </div>
+        <div class="jiaoji">
+          <div class="introTitleBlock" id="introTitleBlock_JJ"></div>
+          <p class="introTitle">教 师 技 能 组</p>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupPhoto"><img src="/resources/static/groupImg/jiaoji.png" alt=""></div>
+              <div class="groupintro">
+                <p>我们旨在锤炼同学们教育技术专业能力，提升同学们的课堂教学能力及技术支撑或融合教学的
+                能力，并给同学们能力的锻炼与展示提供合适的平台。本组主要从教师课堂教学能力；“三笔一画”能力；技术支撑或融合
+                教学的能力；教学论文撰写能力等四个基础能力对学生进行培养。本组以信息技术教师的基本能力为核心培训方向，通过
+                摄影、动画制作、音频处理、等方式，并运用PS、CorelDraw、PR、AE等软件进行教学视频的编辑与制作。我们欢迎有志于
+                利用技术让教育更美好的同学加入我们小组。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split">
+          <img src="/resources/static/intro.png" alt="">
+          <div class="splitLine"></div>
+        </div>
+        <div class="xinmeiti">
+          <div class="introTitleBlock"  id="introTitleBlock_XMT"></div>
+          <p class="introTitle">新 媒 体 教 育 组</p>
+          <div class="groupBlock">
+            <div class="groupContent">
+              <div class="groupPhoto"><img src="/resources/static/groupImg/xinMeiti.jpg" alt=""></div>
+              <div class="groupintro">
+                <p>该组是基于四川师范大学教育技术学专业师生运营的一个微信公众平台，以 “技术变革教育”为宗旨，
+                通过传播分享信息化教育中的工具、技术、资源、思维等内容，以促进教师职后碎片化学习和提升四川师范大学教育技术学专业
+                影响力为目的的新媒体运营小组。小组由周雄俊副教授担任指导老师，现有成员16人，其中研究生2人，本科生14人。截止2019
+                年10月13日，关注量已有31715人，用户覆盖全国31个省级行政区域，其中80%为中小学在职教师，平台历史累计推送原创
+                文章150篇。该平台已成为有一定影响力的在职教师职后学习、在校师范生综合素养拓展的新媒体学习交流平台。欢迎同学们的加入。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      
+    </div>
+    <div class="signUpBox">
+      <p class="signUpBoxTitle">Now , join us</p>
+    </div>
+    <div class="signUp">
+      <div class="signUpBlock">
+        <div class="signUpTitleBlock">
+          <p class="signUpTitle">报 名 信 息</p>
+          <ul class="signUpTipBlock">
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">仅限2019级同学报名，每个同学只能提交一次，请谨慎填写，如提交信息有误，请联系管理员</span>
+            </li>
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">请正确填写姓名，杜绝使用外号</span>
+            </li>
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">确保QQ与电话号码准确无误，方便通过考核后工作人员与之联系</span>
+            </li>
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">可根据自己的志愿选择第一志愿与第二志愿，若只想加入一个，两个志愿选择一样方可</span>
+            </li>
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">系统正在试运行过程中，如报名出现问题，请联系IT培优新生群管理员，或到第一实验楼西509咨询</span>
+            </li>
+            <li class="signUpTip">
+              <span class="signUpTipdot">*</span>
+              <span class="signUpTipContent">杜绝恶意提交，如经发现，IT培优有权拒绝其报名</span>
+            </li>
+          </ul>
+        </div>
+        <div class="signUpInformation">
+          <input class="nameInput" name="name" type="text" placeholder="姓名" id="nameInput">
+          <input class="snoInput" name="sno" type="text" placeholder="学号" id="snoInput">
+          <input class="telInput" name="tel" type="text" placeholder="电话" id="telInput">
+          <input class="qqInput" name="qq" type="text" placeholder="QQ" id="qqInput">
+          <div class="checkbox">
+            <div class="checkTitle">
+              <p>第一志愿 ：</p>
+            </div>
+            <!-- 隐藏input用label对应 -->
+            <input type="radio" name="checklistFirst" id="firstcheck_BC" class="checklist" value="1" checked="checked">
+            <input type="radio" name="checklistFirst" id="firstcheck_MG" class="checklist" value="2">
+            <input type="radio" name="checklistFirst" id="firstcheck_CP" class="checklist" value="3">
+            <input type="radio" name="checklistFirst" id="firstcheck_JJ" class="checklist" value="4">
+            <input type="radio" name="checklistFirst" id="firstcheck_XMT" class="checklist" value="5">
+
+            <div class="checkLabelBlock" id="firstcheckLabel">
+              <label for="firstcheck_BC" class="checklabel">
+                <span>编程</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="firstcheck_MG" class="checklabel">
+                <span>美工</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="firstcheck_CP" class="checklabel">
+                <span>产品</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="firstcheck_JJ" class="checklabel">
+                <span>教师技能</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="firstcheck_XMT" class="checklabel">
+                <span>新媒体</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+            </div>
+          </div>
+
+          <div class="checkbox">
+            <div class="checkTitle">
+              <p>第二志愿 ：</p>
+            </div>
+            <input type="radio" name="checklistSecond" id="secondcheck_BC" class="checklist" value="1" checked="checked">
+            <input type="radio" name="checklistSecond" id="secondcheck_MG" class="checklist" value="2">
+            <input type="radio" name="checklistSecond" id="secondcheck_CP" class="checklist" value="3">
+            <input type="radio" name="checklistSecond" id="secondcheck_JJ" class="checklist" value="4">
+            <input type="radio" name="checklistSecond" id="secondcheck_XMT" class="checklist" value="5">
+            <div class="checkLabelBlock" id="secondcheckLabel">
+              <label for="secondcheck_BC" class="checklabel">
+                <span>编程</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="secondcheck_MG" class="checklabel">
+                <span>美工</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="secondcheck_CP" class="checklabel">
+                <span>产品</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="secondcheck_JJ" class="checklabel">
+                <span>教师技能</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+              <label for="secondcheck_XMT" class="checklabel">
+                <span>新媒体</span>
+                <img src="/resources/static/checkBgImg.png" alt="" class="checkImg">
+              </label>
+            </div>
+          </div>
+          
+          <div class="verify">
+            <input type="text" name="verificationCode" class="verifyCode" placeholder="验证码" id="varifyInput">
+            <div class="verifyCodeBox">
+              <img id="verifyImg" alt="点击更换" title="点击更换" onclick="changeVerifyCode(this)" src="../Kaptcha" />
+            </div>
+          </div>
+          <div class="submit">
+              <button class="submitBtn">提交</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <div class="signUpfooter">
+      <ul class="contactInfo">
+        <li>IT培优2019级新生QQ群： 106590213</li>
+        <li>负责人： 欧阳鸣 1439620614 <br>
+            <span>丁安娜 1658627012</span>  
+      </li>
+      </ul>
+      <ul class="contactInfo">
+        <li>编程组大组长： 许昊炜 1258275290</li>
+        <li>美工组大组长： 向华灏 451126949</li>
+        <li>教师技能组组长： 宋苏晗 741937971</li>
+      </ul>
+      <ul class="contactInfo">
+        <li>新媒体教育组组长： 陈玲 2249793131</li>
+        <li>产品组组长： 贺姝 1428260535 <br>
+          <span>汪汐 1569446357</span>
+        </li>
+          
+      </ul>
+    </div>
+    <p id="footerCopyright">Copyright © 2019 四川师范大学 IT培优</p>
+
+
+
+
+  </body>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="/resources/js/join.js"></script>
+  <script color="0,0,0" opacity="0.5" count="99"
+          src="/resources/js/canvas-nest.js"
+          type="text/javascript" charset="utf-8"></script>
 </html>

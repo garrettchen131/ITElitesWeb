@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -43,5 +46,13 @@ public class ApplicantDaoTest extends BaseTest {
         }
 
         assertEquals(effectiveNum,1);
+    }
+
+    @Test
+    public void testQueryApplicant() {
+        Map<String, Object> params = new HashMap<>();
+        params.put("applicantNum", 2019110104);
+        List<Applicant> list = this.applicantDAO.queryApplicant(params);
+        System.out.println(list.size());
     }
 }

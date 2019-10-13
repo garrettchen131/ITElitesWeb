@@ -12,6 +12,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,24 +31,36 @@ public class UtilTest extends BaseTest {
     @Test
     public void testGenerateUtil() {
 
-        System.out.println(messageSource.toString());
-        String value = messageSource.getMessage("Applicant.applicantNum", null, "没有", Locale.ENGLISH);
-        System.out.println(value);
-//        Map<String, String> params = new HashMap<>();
-//        params.put("applicantNum", "2017110104");
-//        params.put("teamOne", "1");
-//        Applicant applicant = null;
-//        try {
-//            applicant = GenerateUtil.GenerateClass(params, Applicant.class);
-//            System.out.println(applicant.getApplicantNum());
-//            System.out.println(applicant.getTeamOne().getTeamId());
-//            System.out.println(applicant.getTeamOne().getTeamName());
-//        } catch (ValidationException e) {
-//            e.printStackTrace();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+//        System.out.println(messageSource.toString());
+//        String regExp = messageSource.getMessage("Applicant.applicantName", null, "没有", Locale.ENGLISH);
 //
-//        assertEquals(2017110104, (long)applicant.getApplicantNum());
+//        String value = "自行车";
+//
+//        Pattern pattern = Pattern.compile(regExp);
+//        Matcher matcher = pattern.matcher(value);
+//
+//        System.out.println(matcher.matches());
+        Map<String, String> params = new HashMap<>();
+        params.put("applicantNum", "2019110104");
+        params.put("applicantName", "自行车");
+        params.put("phone", "15388887777");
+        params.put("qq", "974545654");
+        params.put("teamOne", "1");
+        params.put("teamTwo", "2");
+
+        Applicant applicant = null;
+        try {
+            applicant = GenerateUtil.GenerateClass(params, Applicant.class);
+            System.out.println(applicant.getApplicantNum());
+            System.out.println(applicant.getTeamOne().getTeamId());
+            System.out.println(applicant.getApplicantName());
+        } catch (ValidationException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        assertEquals(2019110104, (long)applicant.getApplicantNum());
+        assertEquals("自行车", applicant.getApplicantName());
     }
 }

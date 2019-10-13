@@ -1,0 +1,636 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.titleBlock {
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
+    position: relative;
+}
+.bgImg {
+    width: 100%;
+    height: 100%;
+    background-image: url(/resources/static/joinbgimg2.jpg);
+    background-size: 100% 100%;
+    background-position: 0 -30vh;
+    background-repeat: no-repeat;
+    position: fixed;
+}
+ .shadow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.1);
+    display: -webkit-flex;
+    display: flex;
+    align-content: center;   
+    flex-wrap: wrap;
+}
+
+.shadow h1 {
+    width:90%;
+    color: whitesmoke;
+    margin-left: 15%;
+    padding-left: 2%;
+    font-size: 4rem;
+    white-space: nowrap;
+    border-left: 20px solid #7aa6a5;
+}
+.about {
+    width:100%;
+    background-color: whitesmoke;
+    position: relative;
+    padding-bottom: 6%;
+}
+.aboutTitle {
+    text-align: center;
+    padding-top: 5%;
+    font-size: 2rem;
+    color: #4d4b4b;
+
+}
+.aboutTitleBorder {
+    width: 6%;
+    border-bottom: 3px solid #7aa6a5;
+    margin-left: 50%;
+    position: relative;
+    top: 10px;
+    left: -3%;
+}
+.aboutContent {
+    padding: 4% 0 4% 4% ;
+}
+.TeamBlock {
+    width: 100%;
+    position: relative;
+    left: -2%;
+    overflow: hidden; 
+    /* 清除浮动 */
+}
+.Team {
+    width: 15%;
+    height: 80%;
+    float: left;
+    position: relative;
+    top: 10%;
+    margin-left: 4.2%;
+    background-color: white;
+}
+.teamContent {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(184, 180, 180);
+    transform: scale(0.9);
+    padding-top: 15%;
+    padding-bottom: 16%;
+}
+.teamIcon {
+    width: 40%;
+    position: relative;
+    left: 30%;
+}
+.teamIcon>img {
+    width: 100%;
+}
+.teamTitle {
+    width: 100%;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 1.7rem;
+    color: rgb(75, 73, 73);
+}
+.split {
+    width: 100%;
+    padding-bottom: 6%;
+}
+.split>img {
+    width: 3%;
+    margin-left: 10%;
+    float: left;
+}
+.splitLine {
+    width: 77%;
+    margin-top: 1.5%;
+    border: 1px dashed #707070;
+    margin-left: 1%;
+    float: left;
+}
+.teamIntro {
+    width: 100%;
+    background-color: white;
+    padding-top: 4%;
+}
+.biancheng, .meigong, .chanpin, .jiaoji, .xinmeiti {
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.introTitleBlock {
+    width: 8%;
+    border: 5px solid #519D9E;
+    margin: 0 auto;
+}
+.introTitle {
+    text-align: center;
+    position: relative;
+    color: #4d4b4b;
+    font-size: 2.8rem;
+    background-color: white;
+}
+#introTitleBlock_JJ {
+    width: 15%;
+}
+#introTitleBlock_XMT {
+    width: 19.5%;
+}
+.groupBlock {
+    width: 70%;
+    margin-left: 15%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.groupPhoto {
+    width: 40%;
+    background-color: rgb(207, 207, 145);
+    float: left;
+    margin-top: 5%;
+}
+.groupPhoto>img {
+    width: 100%;
+}
+.groupContent {
+    width:100%;
+    overflow: hidden;
+}
+.groupName {
+    border-bottom: 2px solid #CADBE9;
+    line-height: 4rem;
+    color: #4d4b4b;
+    font-size: 2rem;
+}
+.groupintro {
+    width: 50%;
+    height: 300px;
+    color: #4d4b4b;
+    margin-left: 8%;
+    font-size: 1rem;
+    float: left;
+    display: flex;
+    line-height: 1.8rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+.signUpBox {
+    width: 100%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.signUpBoxTitle {
+    font-size: 6rem;
+    margin-left: 5%;
+	color: #cfdfe2;
+	font-weight: 320;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.signUp {
+    width: 100%;
+    position: relative;
+    background-color: #CADBE9;
+    padding-top: 5%;
+    padding-bottom: 6%;
+}
+.signUpBlock {
+    width: 70%;
+    margin-left: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-image: url(/resources/static/signUpbgImg.jpg);
+    background-size: 100%;
+}
+.signUpTitleBlock {
+    width: 40%;
+    height: 100%;
+    background-color: rgba(71, 137, 168, 0.5);
+} 
+.signUpTitle {
+    font-size: 3rem;
+    color: rgb(253, 253, 253);
+    text-align: center;
+    margin-top: 40%;
+    position: relative;
+}
+.signUpTipBlock {
+    padding-bottom: 15%;
+}
+.signUpTip {
+    width: 80%;
+    font-size: 0.7rem;
+    padding-left: 10%;
+    padding-right: 10%;
+    line-height: 200%;
+    position: relative;
+    top: 10%;
+    list-style: none;
+    color: rgb(214, 214, 214);
+}
+.signUpTipdot {
+    width: 5%;
+    display: inline-block;
+    color:rgb(247, 206, 130);
+    position: absolute;
+    top:0;
+}
+.signUpTipContent {
+    position: relative;
+    left:7%;
+    width: 90%;
+    display: inline-block;
+}
+.signUpTipBlock {
+    margin-top: 30%;
+}
+.signUpInformation {
+    width: 59%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+.checkTitle{
+    color: rgb(59, 58, 58);
+    font-size: 1.1rem;
+    margin-left: 10%;
+    font-weight: bold;
+    padding-bottom: 1%;
+}
+.signUpInformation > input {
+    width: 42%;
+    height: 6%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: 5%;
+    border-radius: 30vw;
+    outline: none;
+    border: 0;
+    background-color: whitesmoke;
+}
+.snoPrompt{
+    position: relative;
+    font-size: xx-small;
+    font-weight: 10;
+    color:rgb(247, 206, 130);
+}
+.checklist {
+    display: none;
+}
+.checkLabelBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#secondcheckLabel {
+    padding-bottom: 2%;
+}
+.checklabel {
+    width: 11%;
+    margin-left: 3%;
+    left: 2%;
+    display: flex;
+    border-radius: 30vw;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.checklabel>span {
+    width: 100%;
+    position: absolute;
+    font-size: 0.8rem;
+    color: #413f3f;
+    font-weight: bold;
+    text-align: center;
+}
+.checklabel>img {
+    width: 100%;
+}
+.verify {
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.verifyCode {
+    width: 10%;
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    position: relative;
+    background-color: whitesmoke;
+    border: 0;
+    outline: none;
+}
+.verifyCodeBox {
+    height: 100%;
+    margin-left: 2%;
+}
+.verifyCodeBox > img {
+    cursor: pointer;
+    height: 100%;
+}
+.submit {
+    width: 42%;
+    height: 7%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: 5%;
+    border-radius: 30vw;
+    background-color: rgb(108, 171, 201);
+}
+.submit > button {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    color: whitesmoke;
+}
+.submit:hover {
+    background-color: rgb(93, 178, 218);
+}
+.signUpfooter {
+    position: relative;
+    background-color: #b8b8b8;
+    padding-top: 2%;
+    display: flex;
+    align-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 2%;
+}
+.contactInfo {
+    padding-left: 1%;
+    margin-left: 2%;
+}
+.contactInfo span {
+    display: inline-block;
+    padding-left: 24.5%;
+}
+
+.contactInfo>li {
+    width: 100%;
+    font-size: 1rem;
+    color: rgb(29, 28, 28);
+    padding-left: 10%;
+    padding-top: 1%;
+    list-style: none;
+}
+.contactInfo>li>ul{
+    position: relative;
+    left: 9%;
+}
+.contactInfo>li>ul>li{
+    list-style: none;
+}
+#footerCopyright{
+    width:100%;
+    background-color: #616161;
+    color: whitesmoke;
+    font-size: 80%;
+    text-align: center;
+    margin:0;
+    position: relative;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1199px) {
+    .titleBlock { 
+        height: 50vh;
+    }
+    .aboutTitleBorder {
+        width: 7%;
+        left: -3.5%;
+    }
+    .shadow h1 {
+        font-size: 3.8rem;
+        margin-left: 14%;
+    }
+    .aboutTitle {
+        font-size: 1.9rem;
+    }
+    .teamTitle {
+        font-size: 1.4rem;
+    }
+
+    .introTitle {
+        font-size: 2.6rem;
+    }
+
+}
+@media screen and (min-width: 760px) and (max-width: 949px) {
+    .titleBlock {
+        height: 40vh;
+    }
+    .aboutTitleBorder {
+        width: 8%;
+        left: -4%;
+    }
+    .shadow h1 {
+        font-size: 3.6rem;
+        margin-left: 13%;
+    }
+    .aboutTitle {
+        font-size: 1.6rem;
+    }
+    .teamTitle {
+        font-size: 1.1rem;
+    }
+    
+    .introTitle {
+        font-size: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .titleBlock {
+        height: 22vh;
+    }
+    .bgImg {
+        height: 61%;
+        background-position: 0 0;
+    }
+    .aboutTitleBorder {
+        width: 10%;
+        left: -5%;
+    }
+    .shadow h1 {
+        font-size: 1.8rem;
+        margin-left: 10%;
+    }
+    .aboutTitle {
+        font-size: 0.9rem;
+    }
+    .Team {
+        width: 20%;
+        height: 80%;
+        top: 15%;
+        margin-left: 0.001%;
+    }
+    .teamTitle {
+        font-size: xx-small;
+    }
+    .introTitle {
+        font-size: 1.2rem;
+    }
+    .introTitleBlock {
+        width: 11%;
+    }
+    #introTitleBlock_JJ {
+        width: 22%;
+    }
+    #introTitleBlock_XMT {
+        width: 30%;
+    }
+    .biancheng, .meigong, .chanpin, .jiaoji, .xinmeiti {
+        padding-top: 5%;
+        padding-bottom: 2%;
+    }
+    .groupPhoto {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 8%;
+        padding-bottom: 5%;
+        display: inline-block;
+        background-color: transparent;
+    }
+    .groupContent {
+        width:90%;
+        margin-left: 5%;
+    }
+    .groupName {
+        line-height: 3rem;
+        font-size: 1.2rem;
+        margin-top: 4%;
+    }
+    .groupintro { 
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        margin-top: 5%;
+        margin-left: 5%;
+    }
+    .groupintro>p{
+        padding-right: 5%;
+    }
+    .signUpBlock {
+        background-image: none;
+    }
+    .signUpBoxTitle {
+        font-size: 2rem;
+    }
+    .signUpfooter {
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+        flex-direction: column;
+        padding-bottom: 5%;
+    }
+    .signUpTitleBlock {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(71, 137, 168, 0.5);
+    } 
+    .signUpTitle {
+        font-size: 2rem;
+        margin-top: 10%;
+    }
+    .signUpTip {
+        line-height: 150%;
+    }
+    .signUpTipBlock {
+        margin-top: 10%;
+        padding-bottom: 12%;
+    }
+    .signUpInformation {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 15%;
+        padding-bottom: 15%;
+        background-image: url("/resources/static/signUpbgImg_phoneLeft.jpg");
+        background-size: 100%;
+    }
+    
+    .signUpInformation > input {
+        font-size: 0.7rem;
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .checkTitle{
+        font-size: 0.8rem;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .checklabel {
+        width: 18%;
+        margin-left: 0.1%;
+        left: 0;
+    }
+    .checklabel>span {
+        font-size: 0.7rem;
+        font-weight: normal;
+    }
+    .verify {
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .verifyCode {
+        width: 15%;
+        font-size: 0.7rem;
+    }
+    .verifyImg {
+        font-size: 0.7rem;
+    }
+    .submit {
+        font-size: 0.7rem;
+        padding-bottom: 1.4%;
+    }
+    .submit > button {
+        font-size: 0.8rem;
+    }
+    .contactInfo>li {
+        font-size: 0.7rem;
+        padding-left: 10%;
+        padding-top: 1%;
+    }
+    .contactInfo span {
+        padding-left: 18%;
+    }
+    #footerCopyright {
+        font-size: 0.7rem;
+    }
+}

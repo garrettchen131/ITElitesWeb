@@ -22,9 +22,12 @@ public class FirstHeadExecution extends BaseExecution<FirstHead> {
     public FirstHeadExecution(FirstHeadStateEnum stateEnum, List<FirstHead> firstHeadList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.value = valueList.get(0);
-        this.valueList = firstHeadList;
-        this.count = firstHeadList.size();
-
+        if (firstHeadList != null) {
+            this.valueList = firstHeadList;
+            this.count = firstHeadList.size();
+            if (this.count != 0) {
+                this.value = valueList.get(0);
+            }
+        }
     }
 }

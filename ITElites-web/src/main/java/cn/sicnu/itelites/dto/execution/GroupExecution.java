@@ -26,8 +26,12 @@ public class GroupExecution extends BaseExecution<Group> {
     public GroupExecution(GroupStateEnum stateEnum, List<Group> groupList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.value = groupList.get(0);
-        this.valueList = groupList;
-        this.count = groupList.size();
+        if (groupList != null) {
+            this.valueList = groupList;
+            this.count = groupList.size();
+            if (this.count != 0) {
+                this.value = valueList.get(0);
+            }
+        }
     }
 }

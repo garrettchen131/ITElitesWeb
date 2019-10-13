@@ -5,7 +5,7 @@ public enum ApplicantStateEnum {
     ADD_SUCCESS(0, "添加成功"),ADD_FAIL(-1,"添加失败"),
     CHANGE_SUCCESS(0,"修改成功"),CHANGE_FAIL(-2,"修改失败"),
     GET_SUCCESS(0, "查询成功"),NULL_APPLICANT(-1,"无申请人"),
-    INCOMPLETE(-3, "不完整的信息")
+    INCOMPLETE(-3, "不完整的信息"), REPEAT_NUM(-5, "重复的学号"),
     ;
 
 

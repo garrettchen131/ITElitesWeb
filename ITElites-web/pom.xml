@@ -18,6 +18,10 @@
   <url>http://www.example.com</url>
 
   <dependencies>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+    </dependency>
 
     <!-- tencent短信服务-->
     <dependency>

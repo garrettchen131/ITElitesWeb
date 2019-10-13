@@ -37,6 +37,7 @@
         <httpclient.version>4.5.10</httpclient.version>
         <httpcore.version>4.4.12</httpcore.version>
         <httpmime.version>4.5.10</httpmime.version>
+        <logback.version>1.2.3</logback.version>
         <!-- 定义项目构建的相关环境属性 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -75,6 +76,12 @@
     </profiles>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
             <!-- tencent短信服务-->
             <dependency>
                 <groupId>com.github.qcloudsms</groupId>

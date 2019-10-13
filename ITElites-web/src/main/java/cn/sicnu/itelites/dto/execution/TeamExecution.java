@@ -23,8 +23,12 @@ public class TeamExecution extends BaseExecution<Team> {
     public TeamExecution(TeamStateEnum stateEnum, List<Team> teamList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.value = teamList.get(0);
-        this.valueList = teamList;
-        this.count = teamList.size();
+        if (teamList != null) {
+            this.valueList = teamList;
+            this.count = teamList.size();
+            if (this.count != 0) {
+                this.value = valueList.get(0);
+            }
+        }
     }
 }

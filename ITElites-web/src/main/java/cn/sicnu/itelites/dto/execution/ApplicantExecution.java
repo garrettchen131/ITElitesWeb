@@ -25,8 +25,12 @@ public class ApplicantExecution extends BaseExecution<Applicant> {
     public ApplicantExecution(ApplicantStateEnum stateEnum, List<Applicant> applicantList) {
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
-        this.value = applicantList.get(0);
-        this.valueList = applicantList;
-        this.count = applicantList.size();
+        if (applicantList != null) {
+            this.valueList = applicantList;
+            this.count = applicantList.size();
+            if (this.count != 0) {
+                this.value = valueList.get(0);
+            }
+        }
     }
 }

@@ -17,6 +17,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
 
 @Component
+/**
+ *  此类后续还需要改造！
+ *  974212451@qq.com
+ *  2019-10-12
+ */
 public class GenerateUtil {
 
     private static MessageSource messageSource;
