@@ -15,7 +15,7 @@
         <!-- 定义所有第三方依赖库的版本白拿后 -->
         <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
         <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <jstl.version>1.2</jstl.version>
         <mybatis.version>3.5.2</mybatis.version>
         <mysql.version>5.1.47</mysql.version>
