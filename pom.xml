@@ -26,7 +26,7 @@
         <spring.version>5.1.9.RELEASE</spring.version>
         <jackson.version>2.9.9</jackson.version>
         <commons-fileupload.version>1.4</commons-fileupload.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <spring-data-redis.version>2.1.9.RELEASE</spring-data-redis.version>
         <mybatis-spring.version>2.0.2</mybatis-spring.version>
         <druid.version>1.1.19</druid.version>
